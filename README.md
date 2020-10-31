@@ -18,7 +18,8 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
 
 - Cadastro do usuário, login e logout;
 - Criação de uma página de perfil para o usuário onde apareçam suas principais informações, reservas realizadas e passagens compradas;
-- Página de  busca de passagens aéreas, integrada com o máximo de companhias/sites de busca possível, com filtros de data, origem e destino, e classificação por relevância e preço;●Checkout integrado com meio de pagamento;
+- Página de  busca de passagens aéreas, integrada com o máximo de companhias/sites de busca possível, com filtros de data, origem e destino, e classificação por relevância e preço;
+- Checkout integrado com meio de pagamento;
 - Função de compartilhar uma passagem integrada com alguma rede social;
 - Função de favoritar uma passagem e página de exibição de favoritos.
 
