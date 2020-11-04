@@ -1,5 +1,5 @@
 import './App.css';
-import theme from './core/theme/theme'
+import theme from '../../core/theme'
 import {Container, ThemeProvider} from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 
