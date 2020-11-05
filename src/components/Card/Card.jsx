@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import Header from "./components/Header";
+import { CardContainer } from "./components/styles";
 
 const Card = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (
+    <CardContainer>
+      <Header />
+      <Content />
+    </CardContainer>
+  );
+};
 
 export default Card;

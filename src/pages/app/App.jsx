@@ -1,7 +1,9 @@
-import './App.css';
-import theme from '../../core/theme'
-import {Container, ThemeProvider} from '@material-ui/core';
-import { Typography } from '@material-ui/core';
+import "./App.css";
+import theme from "../../core/theme/theme";
+import { Container, ThemeProvider } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import CustomInput from "../../components/CustomInput/CustomInput";
 
 const App = () => {
   return (
@@ -12,8 +14,10 @@ const App = () => {
         <Typography variant="body1">Projeto inicial React body1</Typography>
         <Typography variant="body2">Projeto inicial React body2</Typography>
       </Container>
+      <CustomButton text="Teste" iconName="send" color="secondary"/>
+      <CustomInput name="Username" type="text"/>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
