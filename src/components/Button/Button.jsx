@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Checkout() {
+const Button = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function Checkout() {
     )
 }
 
-export default Checkout
+export default Button;

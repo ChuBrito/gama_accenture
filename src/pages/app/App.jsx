@@ -3,7 +3,7 @@ import theme from '../../core/theme'
 import {Container, ThemeProvider} from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 
-function App() {
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container className="App">

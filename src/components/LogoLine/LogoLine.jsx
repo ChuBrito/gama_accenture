@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchPage() {
+const LogoLine = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function SearchPage() {
     )
 }
 
-export default SearchPage
+export default LogoLine
