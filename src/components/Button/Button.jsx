@@ -1,10 +1,11 @@
 import React from 'react'
+import Button from '@material-ui/core/Button';
 
-const Button = () => {
+const Button = (text) => {
     return (
-        <div>
-            
-        </div>
+        <Button variant="contained" color="primary">
+            {text}
+        </Button>
     )
 }
 
