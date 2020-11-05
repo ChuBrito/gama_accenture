@@ -1,11 +1,15 @@
 import React from "react";
-import { FormControl, OutlinedInput, InputLabel, InputAdornment, IconButton } from "@material-ui/core";
+import {
+  FormControl,
+  OutlinedInput,
+  InputAdornment,
+  IconButton,
+} from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
 
 const CustomInput = ({ name, type, onChange, onClick }) => {
   return (
     <FormControl>
-      <InputLabel htmlFor={name.toLowerCase()}>{name}</InputLabel>
       <OutlinedInput
         id={name.toLowerCase()}
         type={type ? type : "text"}
@@ -13,11 +17,12 @@ const CustomInput = ({ name, type, onChange, onClick }) => {
         startAdornment={
           <InputAdornment position="start">
             <IconButton onClick={onClick ? onclick : ""} edge="start">
-                <Visibility />
+              <Visibility />
             </IconButton>
           </InputAdornment>
         }
-      ></OutlinedInput>
+        placeholder={name}
+      />
     </FormControl>
   );
 };
