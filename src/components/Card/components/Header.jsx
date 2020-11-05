@@ -1,14 +1,19 @@
 import React from "react";
+import { CardHeader, HeaderTextDestination } from "./styles";
 
 const Header = () => {
   return (
-    <div>
-      <header>
-        <span>São Paulo - Salvador</span>
-        <span>Ida e Volta</span>
-        <span>Novembro - 03 até 06 de 2020</span>
-      </header>
-    </div>
+    <CardHeader>
+      <HeaderTextDestination>
+        São Paulo - Salvador
+      </HeaderTextDestination>
+      <HeaderTextDestination>
+        Ida e Volta
+      </HeaderTextDestination>
+      <HeaderTextDestination>
+        Novembro - 03 até 06 de 2020
+      </HeaderTextDestination>
+    </CardHeader>
   );
 };
 
