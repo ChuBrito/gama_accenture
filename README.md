@@ -1,6 +1,6 @@
 # Gama_accenture
 
-Projeto para o fim do treinamento da Gama que será apressentado para accenture.
+Projeto para o fim do treinamento da Gama que será apresentado para accenture.
 
 ## Escopo do Projeto
 
