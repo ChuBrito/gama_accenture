@@ -7,7 +7,7 @@ import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import CustomInput from "../../../../components/CustomInput/CustomInput";
 import useStyles from "./styles";
 
-const CustomSearchFields = ({}) => {
+const CustomSearchFields = ({ onChangeInput }) => {
   const classes = useStyles();
   return (
     <>
@@ -15,6 +15,7 @@ const CustomSearchFields = ({}) => {
         <FormLabel color="secondary">Origem</FormLabel>
         <CustomInput
           color="secondary"
+          onChange={onChangeInput}
           iconData={<GpsFixedIcon />}
           type="input"
           name="Origem"

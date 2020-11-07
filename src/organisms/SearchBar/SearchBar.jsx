@@ -8,7 +8,7 @@ const SearchBar = () => {
     console.log(e);
   };
   const onChangeInput = (e) => {
-    console.log(e);
+    console.log(e.target.value);
   };
 
   const sendSearchData = (e) => {

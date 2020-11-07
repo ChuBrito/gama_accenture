@@ -1,45 +1,49 @@
 import React, { useState } from "react";
-import useStyles from "./styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
   AppBar,
-  Box,
-  Hidden,
   Toolbar,
-  Button,
+  useTheme,
   Typography,
+  Button,
+  Box,
 } from "@material-ui/core";
-import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import HeaderMenu from "./component/HeaderMenu";
 import Logo from "../../components/Logo/Logo";
+import useStyles from "./styles";
 
 const Header = () => {
   const [auth, setAuth] = useState(false);
-  const loginIn = () => {
+  const classes = useStyles();
+  const theme = useTheme();
+  const smBp = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const loginHandler = () => {
     setAuth(!auth);
   };
-  const classes = useStyles();
   return (
     <AppBar position="fixed">
       <Toolbar>
-        <Hidden mdUp>
-          <Logo line />
-          <Button
-            className={classes.menuButtom}
-            onClick={loginIn}
-            startIcon={<AccountBoxOutlinedIcon />}
-          >
-            <Typography variant="body2">Login</Typography>
-          </Button>
-        </Hidden>
-        <Hidden smDown>
-          <Logo height="90px" />
-          <Button
-            className={classes.menuButtom}
-            onClick={loginIn}
-            startIcon={<AccountBoxOutlinedIcon style={{ fontSize: 30 }} />}
-          >
-            <Typography variant="h2">Login</Typography>
-          </Button>
-        </Hidden>
+        {smBp ? <Logo height="90px" /> : <Logo line />}
+        <Box
+          className={classes.buttonWrapper}
+          alignItems="center"
+          display="flex"
+          width="30%"
+          justifyContent="flex-end"
+        >
+          {auth ? (
+            <HeaderMenu loginHandler={loginHandler} />
+          ) : (
+            <Button
+              onClick={loginHandler}
+              startIcon={<AccountCircleIcon fontSize="large" />}
+            >
+              <Typography variant="h2">Login</Typography>
+            </Button>
+          )}
+        </Box>
       </Toolbar>
     </AppBar>
   );
