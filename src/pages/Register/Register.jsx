@@ -1,11 +1,12 @@
 import React from 'react';
 import Logo from '../../components/Logo/Logo';
-import { Grid, Paper, Typography, TextField, Button } from '@material-ui/core';
+import { Grid, Paper, TextField, Button } from '@material-ui/core';
+import { ArrowRightAlt } from "@material-ui/icons";
 
 // import CustomInput from '../../components/CustomInput/CustomInput';
 // import CustomButton from '../../components/CustomButton/CustomButton';
 import useStyles from './RegisterComponentStyle/styles';
-import { ImageLogo, Title } from './styles';
+import { ImageLogo, Title, LinkVoltar } from './styles';
 
 
 export const Register = () => {
@@ -80,10 +81,12 @@ export const Register = () => {
                             Cadastrar
                         </Button>
 
-                        {/* <CustomButton
-                            fullWidth        
-                            text="Cadastrar"
-                        ></CustomButton> */}
+                        <LinkVoltar>
+                            <a href="forgot">
+                                Volta para login
+                                <ArrowRightAlt />
+                            </a>
+                        </LinkVoltar>
                     </form>
                 </div>
             </Grid>
