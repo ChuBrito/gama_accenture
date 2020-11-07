@@ -5,6 +5,7 @@ import { Typography } from "@material-ui/core";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
 
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
