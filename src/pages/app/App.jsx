@@ -5,8 +5,8 @@ import { Typography } from "@material-ui/core";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
 
-import Register from '../Register/Register';
-
+// import Register from '../Register/Register';
+import ForgotPassword from '../Login/ForgotPassword/forgotPassword';
 
 const App = () => {
   return (
@@ -18,9 +18,11 @@ const App = () => {
         <Typography variant="body2">Projeto inicial React body2</Typography>
       </Container>
       <CustomButton text="Teste" iconName="send" color="secondary"/>
-      <CustomInput name="Username" type="text"/> */}
+      <CustomInput name="Username" type="text"/>  */}
 
-      <Register />
+      {/* <Register /> */}
+
+      <ForgotPassword />
     </ThemeProvider>
   );
 };
