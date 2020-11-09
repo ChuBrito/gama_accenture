@@ -29,6 +29,14 @@ const theme = createMuiTheme({
                 height: "57px",
             },
         },
+        MuiContainer: {
+            maxWidthLg: "1360px",
+        },
+        MuiAppBar: {
+            colorPrimary: {
+                backgroundColor: "#F1F1F1",
+            },
+        },
     },
     palette: {
         primary: {
@@ -40,7 +48,7 @@ const theme = createMuiTheme({
         },
         text: {
             primary: "#123952",
-            secondary: "#617480",
+            secondary: "#F1F1F1",
             hint: "#A0ACB2",
         },
     },
