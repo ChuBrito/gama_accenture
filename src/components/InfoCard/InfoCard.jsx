@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "@material-ui/core/Card";
+import { Card } from "@material-ui/core";
 import Header from "./components/Header";
 import Content from "./components/Content/Content";
 
@@ -8,7 +8,7 @@ import Content from "./components/Content/Content";
 const InfoCard = () => {
   return (
     <Card>
-      <Header />
+      <Header/>
       <Content />
     </Card>
   );

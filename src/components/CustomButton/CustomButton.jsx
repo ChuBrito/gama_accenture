@@ -4,6 +4,7 @@ import Icon from '@material-ui/core/Icon'
 import Typography from '@material-ui/core/Typography'
 
 const CustomButton = ({ text, iconName, color, onClick }) => {
+  console.log(color)
   return (
     <Button
       variant='contained'

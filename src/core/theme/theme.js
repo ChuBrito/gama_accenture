@@ -13,6 +13,7 @@ const theme = createMuiTheme({
       primary: "#123952",
       secondary: "#FFFFFF",
       hint: "#A0ACB2",
+      featured: "#009688",
     },
   },
   typography: {
@@ -35,10 +36,6 @@ const theme = createMuiTheme({
     body2: {
       fontFamily: "Heebo",
       fontSize: "0.8rem",
-    },
-    h1card: {
-      fontFamily: "Barlow",
-      fontSize: "2rem",
     },
   },
 });
