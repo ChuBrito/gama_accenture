@@ -4,14 +4,13 @@ import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import ProfilePhoto from "../../assets/profile-avatar-placeholder.png";
 
-const ProfileBio = (
-  profileImage,
+const ProfileBio = ({
+  profileImage = ProfilePhoto,
   nameUser,
   emailUser,
   phoneUser,
-  saveInputs
-) => {
-  console.log(nameUser);
+  saveInputs,
+}) => {
   return (
     <Box width="100%">
       <Grid
@@ -32,16 +31,12 @@ const ProfileBio = (
             justifyContent="center"
           >
             <Box borderRadius="50%" overflow="hidden" height="100%">
-              {/* {profileImage ? ( */}
               <img
                 height="100%"
                 id="default-image"
-                src={ProfilePhoto}
+                src={profileImage}
                 alt="My face at placeholder"
               />
-              {/* ) : (
-                <img href={profileImage.toString()} alt="My face at profile" />
-              )} */}
             </Box>
           </Box>
         </Grid>

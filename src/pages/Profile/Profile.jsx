@@ -1,20 +1,37 @@
-import React from "react";
-import { Box, Grid, Typography, Container } from "@material-ui/core";
+import React, { useState } from "react";
+import { Box, Grid, Typography } from "@material-ui/core";
 import ProfileBio from "../../organisms/ProfileBio/ProfileBio";
+import DefaultPage from "../../templates/DefaultPage/DefaultPage";
+
+const USERDATAMOCK = {
+  name: "Fedrerico Novo",
+  email: "fe.novo@fed.com",
+  phone: "11 986111616",
+};
 
 const Profile = () => {
-  const saveProfile = (e) => {
+  const [userData, setUserData] = useState(USERDATAMOCK);
+
+  const saveProfileHandler = (e) => {
+    console.log(e);
+  };
+
+  const shareTicketHandler = (e) => {
     console.log(e);
   };
 
   return (
-    <Container>
+    <DefaultPage>
+      <Typography color="textSecondary" variant="subtitle2">
+        testandoooo
+      </Typography>
       <Box
         display="flex"
         flexDirection="column"
-        bgcolor="F5F8FA"
-        borderRadius="4px"
+        bgcolor="#F5F8FA"
+        borderRadius="10px"
         justifyContent="center"
+        marginTop="10px"
       >
         <Grid
           id="profile-title-item"
@@ -23,28 +40,37 @@ const Profile = () => {
           justify="center"
           alignItems="center"
         >
-          <Typography variant="h1">Perfil</Typography>
+          <Box display="flex" height="96px" alignItems="center">
+            <Typography color="primary" variant="h1">
+              Perfil
+            </Typography>
+          </Box>
         </Grid>
         <Grid id="profile-container" container justify="center">
           <Grid id="profile-bios-container" item container>
             <Grid id="profile-bios-item" item container>
               <ProfileBio
-                saveInputs={saveProfile}
-                nameUser="teste name"
-                emailUser="teste email"
-                phoneUser="11 98989898"
+                saveInputs={saveProfileHandler}
+                nameUser={userData.name.toString()}
+                emailUser={userData.email}
+                phoneUser={userData.phone}
               />
             </Grid>
           </Grid>
-          <Grid id="profile-reservs-list" item container>
+          <Grid id="profile-reservs-list" item container justify="center">
             <Box bgcolor="blue" minHeight="50px" minWidth="90%"></Box>
           </Grid>
-          <Grid id="profile-bougth-tickets-list" item container>
+          <Grid
+            id="profile-bougth-tickets-list"
+            item
+            container
+            justify="center"
+          >
             <Box bgcolor="red" minHeight="50px" minWidth="90%"></Box>
           </Grid>
         </Grid>
       </Box>
-    </Container>
+    </DefaultPage>
   );
 };
 
