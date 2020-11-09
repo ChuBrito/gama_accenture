@@ -4,9 +4,9 @@ import { ReactComponent as LogoLarge } from "../../assets/Logo_lg.svg";
 import { ReactComponent as LogoSmall } from "../../assets/Logo_sm.svg";
 import { ReactComponent as LogoLine } from "../../assets/Logo_line.svg";
 
-const Logo = ({ large, line, height }) => {
+const Logo = ({ large, line, height, width }) => {
   return (
-    <Box display="flex" height={height}>
+    <Box display="flex" maxHeight={height} maxWidth={width}>
       {line ? <LogoLine /> : large ? <LogoLarge /> : <LogoSmall />}
     </Box>
   );
