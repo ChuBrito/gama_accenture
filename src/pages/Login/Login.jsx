@@ -31,9 +31,9 @@ function Login() {
                     </form>
                 </div>
 
-                <a href="#" className="forgot"><span>Esqueci minha senha</span></a>
+                <a href="/forgot" className="forgot"><span>Esqueci minha senha</span></a>
 
-                <a href="#" className="account"><span>Criar conta</span></a>
+                <a href="/account" className="account"><span>Criar conta</span></a>
             </div>
         </div>
     )
