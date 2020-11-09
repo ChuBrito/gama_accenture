@@ -4,7 +4,7 @@ import { Container, ThemeProvider } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import CardList from "../../molecules/CardList/CardList";
+// import CardList from "../../molecules/CardList/CardList";
 
 
 const App = () => {
@@ -17,8 +17,8 @@ const App = () => {
         <Typography variant="body2">Projeto inicial React body2</Typography>
       </Container>
       <CustomButton text="Teste" iconName="send" color="secondary"/>
-      <CustomInput name="Username" type="text"/>
-    <CardList />
+      <CustomInput name="email" type="text" iconData="send"/>
+    {/* <CardList /> */}
     </ThemeProvider>
   );
 };
