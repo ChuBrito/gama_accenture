@@ -1,25 +1,24 @@
+import { Typography } from "@material-ui/core";
 import React from "react";
-import { ContentMiddle } from "../../styles";
+import { ContentMiddle, CornerContainer, MiddleContainer } from "../../styles";
 
-// TODO
+// TODO alterar tipografias para certos no theme
 
 const FlyInfos = ({ information }) => {
   return (
     <ContentMiddle>
-      <>
         <CornerContainer>
-          <ContentTimeText>23:15</ContentTimeText>
-          <ContentAirportText>CGH</ContentAirportText>
+          <Typography>23:15</Typography>
+          <Typography>CGH</Typography>
         </CornerContainer>
         <MiddleContainer>
-          <ContentBlueText>Direto</ContentBlueText>
-          <ContentFlightDurationText>03h 20min</ContentFlightDurationText>
+          <Typography>Direto</Typography>
+          <Typography>03h 20min</Typography>
         </MiddleContainer>
         <CornerContainer>
-          <ContentTimeText>01:35</ContentTimeText>
-          <ContentAirportText>CGH</ContentAirportText>
+          <Typography>01:35</Typography>
+          <Typography>CGH</Typography>
         </CornerContainer>
-      </>
     </ContentMiddle>
   );
 };

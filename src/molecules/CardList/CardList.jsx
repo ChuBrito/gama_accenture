@@ -1,14 +1,13 @@
-import React from 'react'
-import Card from '../../components/Card/Card'
-import {CardListContainer} from './styles';
+import React from "react";
+import InfoCard from "../../components/Card/InfoCard";
+import { Container } from "@material-ui/core";
 
 const CardList = () => {
-    return (
-        <CardListContainer>
-            <Card />
-            <Card />
-        </CardListContainer>
-    )
-}
+  return (
+    <Container>
+      <InfoCard />
+    </Container>
+  );
+};
 
 export default CardList;

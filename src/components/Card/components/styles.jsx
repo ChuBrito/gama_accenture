@@ -11,32 +11,38 @@ export const CardHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #115D8C;
+  background-color: #115d8c;
   padding: 1em;
 `;
 
 export const HeaderTextDestination = styled.span`
   color: white;
-`
+`;
 
 export const ContentContainer = styled.main`
   display: flex;
   orientation: row;
-  padding: .3em;
-`
+  padding: 0.3em;
+`;
 
 export const ContentAirline = styled.div`
   text-align: center;
   align-items: center;
   font-weight: bold;
-`
+`;
 
 export const CornerContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: black;
   font-size: 1.5em;
-  &:first-child{
+  &:first-child {
     font-weight: bold;
   }
-`
+`;
+
+export const ContentMiddle = styled.div``;
+
+export const ContentDetails = styled.div``;
+
+export const MiddleContainer = styled.div``;
