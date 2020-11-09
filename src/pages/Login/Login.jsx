@@ -17,7 +17,6 @@ const Login = () => {
           </Box>
         </Grid>
       </Hidden>
-
       <Grid
         id="login-form-container"
         container
