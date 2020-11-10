@@ -1,6 +1,6 @@
 import "../Login/Login.css";
 
-import React from "react";
+import React, { useState } from "react";
 import LogoFrag from "../../components/Logo/Logo";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
@@ -8,10 +8,8 @@ import LoginService from "../../services/loginService/LoginService";
 
 function Login() {
 
-    const data = LoginService();
-    Promise.resolve(data).then(response => {
-        console.log(response)
-    })
+    const [password, setPassword] = useState("");
+    const [user, setUser] = useState("");
 
     return (
         <div className="base-container">
@@ -25,15 +23,15 @@ function Login() {
                 <div className="form">
                     <form>
                         <div className="form-group">
-                            <CustomInput name="E-mail" type="text"/>
+                            <CustomInput name="E-mail" type="text" onChange={e => setUser(e.target.value)}/>
                         </div>
                         
                         <div className="form-group">
-                            <CustomInput name="Senha" type="password"/>
+                            <CustomInput name="Senha" type="password" onChange={e => setPassword(e.target.value)}/>
                         </div>
 
                         <div className="send-button">
-                            <CustomButton text="Entrar" iconName="send" color="secondary"/>
+                            <CustomButton text="Entrar" iconName="send" color="secondary" onClick={() => LoginService(password, user)}/>
                         </div>
                     </form>
                 </div>

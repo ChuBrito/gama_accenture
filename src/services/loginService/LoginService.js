@@ -1,34 +1,23 @@
-const getUserData = async () => {
-    const data = await fetch("https://www.cheapshark.com/api/1.0/deals")
+const LoginService = async (senha, usuario) => {
+    const REQ_METHOD = {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            senha: senha,
+            usuario: usuario,
+        })
+    }
+
+    await fetch("https://javatravelers-backend.azurewebsites.net/login", REQ_METHOD)
     .then(async (response) => {
         if(response.ok) {
             const answer = await response.json();
-            return answer;
+            localStorage.setItem("token", answer.token);
+            localStorage.setItem("userId", answer.userId);
+        } else {
+            alert("Login inválido");
         }
-    }).then(async (response) => {
-        const titleData = response.map(item => item.title);
-        return titleData;
     });
-    return data;
 }
 
-export default getUserData;
-
-/*import { useEffect, useState } from "react";
-export default function GetData() {
-    const [pokemons, setPokemons] = useState([]);
-    const URL_API = "https://pokeapi.co/api/v2/pokemon/";
-
-    const loadPokemons = async () => {
-        const response = await fetch(URL_API);
-        const data = await response.json();
-        console.log(data.results)
-    };
-
-    useEffect(() => {
-        loadPokemons();
-        return () => {
-            setPokemons([]);
-        };
-    }, []);
-}*/
+export default LoginService;
