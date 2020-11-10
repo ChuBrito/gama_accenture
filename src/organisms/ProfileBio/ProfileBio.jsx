@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, FormLabel, Grid } from "@material-ui/core";
+import useStyles from "./styles";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import ProfilePhoto from "../../assets/profile-avatar-placeholder.png";
@@ -11,6 +12,7 @@ const ProfileBio = ({
   phoneUser,
   saveInputs,
 }) => {
+  const classes = useStyles();
   return (
     <Box width="100%">
       <Grid
@@ -52,7 +54,7 @@ const ProfileBio = ({
           spacing={1}
         >
           <Grid id="email-container" container item direction="column" xs={10}>
-            <FormLabel color="primary">Email</FormLabel>
+            <FormLabel className={classes.labelsColor}>Email</FormLabel>
             <CustomInput
               name="profile-email-input"
               type="email"
@@ -69,7 +71,7 @@ const ProfileBio = ({
             sm={5}
             direction="column"
           >
-            <FormLabel color="primary">Nome</FormLabel>
+            <FormLabel className={classes.labelsColor}>Nome</FormLabel>
             <CustomInput
               name="profile-name-input"
               defaultValue={nameUser}
@@ -84,7 +86,7 @@ const ProfileBio = ({
             sm={5}
             direction="column"
           >
-            <FormLabel color="primary">Celular</FormLabel>
+            <FormLabel className={classes.labelsColor}>Celular</FormLabel>
             <CustomInput
               name="profile-phone-input"
               defaultValue={phoneUser}
