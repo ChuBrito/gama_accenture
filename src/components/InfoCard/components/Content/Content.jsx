@@ -10,6 +10,16 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
   },
+  currencyBox: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+  },
+  infosBox: {
+    textAlign: "left",
+    width: "20%"
+  },
 });
 
 const Content = () => {
@@ -23,8 +33,8 @@ const Content = () => {
         <Divider />
         <FlyInfos />
       </div>
-      <div>
-        <div>
+      <div className={classes.infosBox}>
+        <div className={classes.alignLeft}>
           <Typography>
             <Box color="#617480">Por adulto</Box>
           </Typography>
@@ -32,12 +42,14 @@ const Content = () => {
             <Box color="#617480">Taxas e tarifas</Box>
           </Typography>
         </div>
+
         <Divider />
 
-        <Typography>
-          <Box fontSize="25px">R$ </Box> <Box fontSize="50px">353,47</Box>
-        </Typography>
-        <CustomButton text="Mais Infos" />
+        <div className={classes.currencyBox}>
+          <Box fontSize="2em">R$ </Box>
+          <Box fontSize="3em">353,47</Box>
+        </div>
+        <CustomButton size="large" color="secondary" text="Mais Infos" />
       </div>
     </CardContent>
   );
