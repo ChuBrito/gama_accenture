@@ -5,11 +5,24 @@ import Content from "./components/Content/Content";
 
 // TODO Falta terminar
 
-const InfoCard = () => {
+const InfoCard = (data) => {
+  const header_info = {
+    initialDestination: data.initialDestination,
+    finalDestination: data.finalDestination,
+    flyType: data.flyType,
+    date: data.date,
+  };
+
+  const content_info = {
+    airline: data.airline,
+    flyInfo: data.flyInfo,
+    value: data.value,
+  };
+
   return (
     <Card>
-      <Header/>
-      <Content />
+      <Header header={header_info} />
+      <Content content={content_info} />
     </Card>
   );
 };

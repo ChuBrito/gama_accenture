@@ -2,10 +2,10 @@ import React from "react";
 import InfoCard from "../../components/InfoCard/InfoCard";
 import { Container } from "@material-ui/core";
 
-const CardList = () => {
+const CardList = ({ infos }) => {
   return (
     <Container>
-      <InfoCard />
+      {infos && infos.map(info => <InfoCard data={info}/>)}
     </Container>
   );
 };
