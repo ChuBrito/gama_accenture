@@ -39,18 +39,19 @@ const theme = createMuiTheme({
         },
     },
     palette: {
-        primary: {
-            main: "#115D8C",
-        },
-        secondary: {
-            main: "#F25D27",
-            contrastText: "#F1F1F1",
-        },
-        text: {
-            primary: "#123952",
-            secondary: "#F1F1F1",
-            hint: "#A0ACB2",
-        },
+      primary: {
+        main: "#115D8C",
+      },
+      secondary: {
+        main: "#F25D27",
+        contrastText: "#F1F1F1",
+      },
+      text: {
+        primary: "#123952",
+        secondary: "#FFFFFF",
+        hint: "#A0ACB2",
+        featured: "#009688",
+      },
     },
     typography: {
         h1: {
