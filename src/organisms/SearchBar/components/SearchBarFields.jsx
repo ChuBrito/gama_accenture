@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 import CustomButton from "../../../components/CustomButton/CustomButton";
 import CustomRadialInputs from "./components/CustomRadialInputs";
 import CustomSearchFields from "./components/CustomSearchFields";
@@ -15,7 +15,7 @@ const SearchBarFields = ({ sendSearchData, onChangeOneWay, onChangeInput }) => {
             color="secondary"
             text="Enviar"
             iconName="send"
-            onClick={sendSearchData.bind(this)}
+            onClick={sendSearchData}
           ></CustomButton>
         </Grid>
       </Grid>
