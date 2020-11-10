@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, FormLabel, Grid } from "@material-ui/core";
 import useStyles from "./styles";
+import ProfileAvatar from "./profileAvatar/ProfileAvatar";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import ProfilePhoto from "../../assets/profile-avatar-placeholder.png";
 
 const ProfileBio = ({
-  profileImage = ProfilePhoto,
+  profileImage,
   nameUser,
   emailUser,
   phoneUser,
@@ -25,22 +25,7 @@ const ProfileBio = ({
         alignItems="center"
       >
         <Grid id="profile-avatar-container" item xs={12} md={4}>
-          <Box
-            id="profile-avatar"
-            display="flex"
-            height="300px"
-            padding="2px"
-            justifyContent="center"
-          >
-            <Box borderRadius="50%" overflow="hidden" height="100%">
-              <img
-                height="100%"
-                id="default-image"
-                src={profileImage}
-                alt="My face at placeholder"
-              />
-            </Box>
-          </Box>
+          <ProfileAvatar profileImage={profileImage} />
         </Grid>
         <Grid
           id="profile-form"
