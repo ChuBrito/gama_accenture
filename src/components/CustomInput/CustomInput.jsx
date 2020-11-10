@@ -23,7 +23,7 @@ const CustomInput = ({
         id={name.toLowerCase()}
         type={type || "text"}
         onChange={onChange}
-        value={defaultValue ? defaultValue : ""}
+        value={defaultValue ? defaultValue : null}
         startAdornment={
           <InputAdornment position="start">
             <IconButton
