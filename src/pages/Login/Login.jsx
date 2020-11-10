@@ -4,8 +4,15 @@ import React from "react";
 import LogoFrag from "../../components/Logo/Logo";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
+import LoginService from "../../services/loginService/LoginService";
 
 function Login() {
+
+    const data = LoginService();
+    Promise.resolve(data).then(response => {
+        console.log(response)
+    })
+
     return (
         <div className="base-container">
             <div className="content">
