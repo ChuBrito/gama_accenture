@@ -74,7 +74,6 @@ const Login = () => {
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
                   <CustomButton
-                    color="primary"
                     text="Entrar"
                     iconName="send"
                     color="secondary"
