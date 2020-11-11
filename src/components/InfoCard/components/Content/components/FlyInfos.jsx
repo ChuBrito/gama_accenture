@@ -4,7 +4,7 @@ import { InfoContainer } from "../../styles";
 
 const FlyInfos = ({ information }) => {
   return (
-    <Grid item container direction="row" wrap="nowrap" xs={5} justify="center">
+    <Grid item container direction="row" wrap="nowrap" xs={6} justify="center">
       <Grid item container direction="column" justify="center" xs={3}>
         <Box display="flex" justifyContent="center" fontWeight="fontWeightBold">
           <Typography>23:15</Typography>
