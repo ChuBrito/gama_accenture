@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../components/Logo/Logo";
+import LoginService from "../../services/loginService/LoginService";
 import BgImageLogin from "../../assets/login-background.png";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
@@ -7,6 +8,9 @@ import { Box, Grid, Typography, Hidden } from "@material-ui/core";
 import useStyles from "./styles";
 
 const Login = () => {
+  const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
+  
   const classes = useStyles();
   return (
     <Grid container className={classes.baseContainerLogin}>
@@ -63,17 +67,17 @@ const Login = () => {
                 alignItems="stretch"
               >
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput color="primary" name="E-mail" type="email" />
+                  <CustomInput color="primary" name="E-mail" type="email" onChange={e => setUser(e.target.value)} />
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput color="primary" name="Senha" type="password" />
+                  <CustomInput color="primary" name="Senha" type="password" onChange={e => setPassword(e.target.value)}/>
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
                   <CustomButton
-                    color="primary"
                     text="Entrar"
                     iconName="send"
                     color="secondary"
+                    onClick={() => LoginService(password, user)}
                   />
                 </Box>
               </Box>
@@ -88,7 +92,6 @@ const Login = () => {
                 <a href="/">
                   <Typography component="span"> Esqueci minha senha</Typography>
                 </a>
-
                 <a href="/">
                   <Typography color="secondary" component="span">
                     Criar Conta
