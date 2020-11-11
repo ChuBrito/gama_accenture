@@ -67,14 +67,13 @@ const Login = () => {
                 alignItems="stretch"
               >
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput color="primary" name="E-mail" type="email" onChange={e => setUser(e.target.value)} />
+                  <CustomInput color="primary" name="E-mail" type="email" onChange={e => setUser(e.target.value)}/>
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
                   <CustomInput color="primary" name="Senha" type="password" onChange={e => setPassword(e.target.value)}/>
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
                   <CustomButton
-                    color="primary"
                     text="Entrar"
                     iconName="send"
                     color="secondary"
