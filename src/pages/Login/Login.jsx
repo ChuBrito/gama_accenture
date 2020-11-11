@@ -10,12 +10,16 @@ import useStyles from "./styles";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
-  
+
+  const onChangeHandler = (e) => {
+    console.log(e.target.value);
+  };
+
   const classes = useStyles();
   return (
     <Grid container className={classes.baseContainerLogin}>
       <Hidden smDown>
-        <Grid id="login-bg-image" item xs="0" md="6">
+        <Grid id="login-bg-image" item md={6}>
           <Box display="flex">
             <img src={BgImageLogin} className={classes.bgImage} />
           </Box>
@@ -25,8 +29,8 @@ const Login = () => {
         id="login-form-container"
         container
         item
-        xs="12"
-        md="6"
+        xs={12}
+        md={6}
         alignItems="center"
       >
         <Box
@@ -41,10 +45,10 @@ const Login = () => {
             direction="column"
             justify="center"
             alignItems="center"
-            xs="12"
+            xs={12}
             spacing={3}
           >
-            <Grid id="login-form-image" container item justify="center" xs="9">
+            <Grid id="login-form-image" container item justify="center" xs={9}>
               <Logo large width="400px" />
             </Grid>
             <Grid id="login-form-title" item>
@@ -67,10 +71,20 @@ const Login = () => {
                 alignItems="stretch"
               >
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput color="primary" name="E-mail" type="email" onChange={e => setUser(e.target.value)} />
+                  <CustomInput
+                    color="primary"
+                    name="E-mail"
+                    type="email"
+                    onChange={(e) => onChangeHandler(e)}
+                  />
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput color="primary" name="Senha" type="password" onChange={e => setPassword(e.target.value)}/>
+                  <CustomInput
+                    color="primary"
+                    name="Senha"
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
                   <CustomButton
