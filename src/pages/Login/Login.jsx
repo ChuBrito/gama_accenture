@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import LoginService from "../../services/loginService/LoginService";
 import BgImageLogin from "../../assets/login-background.png";
@@ -10,14 +11,14 @@ import useStyles from "./styles";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
-  
+
   const classes = useStyles();
   return (
     <Grid container className={classes.baseContainerLogin}>
       <Hidden smDown>
         <Grid id="login-bg-image" item xs="0" md="6">
           <Box display="flex">
-            <img src={BgImageLogin} className={classes.bgImage} />
+            <img src={BgImageLogin} className={classes.bgImage} alt="travel" />
           </Box>
         </Grid>
       </Hidden>
@@ -67,17 +68,31 @@ const Login = () => {
                 alignItems="stretch"
               >
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput color="primary" name="E-mail" type="email" onChange={e => setUser(e.target.value)} />
+                  <CustomInput
+                    color="primary"
+                    name="E-mail"
+                    type="email"
+                    onChange={(e) => setUser(e.target.value)}
+                  />
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput color="primary" name="Senha" type="password" onChange={e => setPassword(e.target.value)}/>
+                  <CustomInput
+                    color="primary"
+                    name="Senha"
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
                   <CustomButton
                     text="Entrar"
                     iconName="send"
                     color="secondary"
-                    onClick={() => LoginService(password, user)}
+                    onClick={() => {
+                      LoginService(password, user);
+
+
+                    }}
                   />
                 </Box>
               </Box>
@@ -89,14 +104,14 @@ const Login = () => {
                 flexDirection="column"
                 paddingTop="40px"
               >
-                <a href="/">
+                <Link to="/forgot-password">
                   <Typography component="span"> Esqueci minha senha</Typography>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/register">
                   <Typography color="secondary" component="span">
                     Criar Conta
                   </Typography>
-                </a>
+                </Link>
               </Box>
             </Grid>
           </Grid>
