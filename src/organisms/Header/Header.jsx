@@ -26,7 +26,7 @@ const Header = () => {
     <AppBar position="fixed">
       <Toolbar>
         {smBp ? (
-          <Logo height="90px" width="300px" />
+          <Logo height="90px" width="300px" padding="10px 0" />
         ) : (
           <Logo line width="45%" />
         )}

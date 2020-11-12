@@ -1,10 +1,25 @@
 import React from "react";
 import { Typography, Box, Divider, Grid } from "@material-ui/core";
 import { InfoContainer } from "../../styles";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles({
+  custonFlexBasis: {
+    flexBasis: "48%",
+  },
+});
 const FlyInfos = ({ information }) => {
+  const classes = useStyles();
   return (
-    <Grid item container direction="row" wrap="nowrap" xs={6} justify="center">
+    <Grid
+      item
+      container
+      className={classes.custonFlexBasis}
+      direction="row"
+      wrap="nowrap"
+      xs={6}
+      justify="center"
+    >
       <Grid item container direction="column" justify="center" xs={3}>
         <Box display="flex" justifyContent="center" fontWeight="fontWeightBold">
           <Typography>23:15</Typography>

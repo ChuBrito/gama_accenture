@@ -11,6 +11,9 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "flex-end",
   },
+  custonFlexBasis: {
+    flexBasis: "48%",
+  },
 });
 
 const Content = () => {

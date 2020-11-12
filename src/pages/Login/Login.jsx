@@ -3,7 +3,6 @@ import Logo from "../../components/Logo/Logo";
 import { Box, Grid, Typography, Hidden } from "@material-ui/core";
 import useStyles from "./styles";
 import LoginService from "../../services/loginService/LoginService";
-import BgImageLogin from "../../assets/login-background.png";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import BgImageLogin from "../../assets/login-background.png";
@@ -22,7 +21,7 @@ const Login = () => {
     <Grid container className={classes.baseContainerLogin}>
       <Hidden smDown>
         <Grid id="login-bg-image" item md={6}>
-          <Box display="flex">
+          <Box display="flex" height="100%">
             <img src={BgImageLogin} className={classes.bgImage} />
           </Box>
         </Grid>
