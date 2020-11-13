@@ -17,6 +17,8 @@ const LoginService = async (senha, usuario) => {
         } else {
             alert("Login inválido");
         }
+    }).catch(() => {
+        alert("Houve um problema na realização do login")
     });
 }
 
