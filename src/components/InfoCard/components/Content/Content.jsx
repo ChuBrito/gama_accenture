@@ -2,7 +2,6 @@ import React from "react";
 import { Divider, Box, Typography, Grid, Hidden } from "@material-ui/core";
 import CustomButton from "../../../CustomButton/CustomButton";
 import FlyInfos from "./components/FlyInfos";
-import { CardContent } from "../styles";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -11,10 +10,29 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "flex-end",
   },
+  custonFlexBasis: {
+    flexBasis: "48%",
+  },
 });
 
-const Content = () => {
+const Content = ({ content }) => {
+  console.log(content.flyInfos);
   const classes = useStyles();
+
+  const twoWayComponent = !content.oneWay ? (
+    <>
+      <Box width="100%">
+        <Divider color="#000000" />
+      </Box>
+      <FlyInfos
+        information={{
+          initialIataCode: content.initialIataCode,
+          finalIataCode: content.finalIataCode,
+          flyInfos: content.flyInfos[1],
+        }}
+      />
+    </>
+  ) : null;
 
   return (
     <Grid container item>
@@ -26,8 +44,8 @@ const Content = () => {
         justify="center"
         md={2}
       >
-        <Box margin="10px">
-          <Typography variant="h1">GOL</Typography>
+        <Box margin="10px" textAlign="center">
+          <Typography variant="h1">{content.flyInfos[0].airline}</Typography>
         </Box>
       </Grid>
       <Grid container item justify="center" sm={7}>
@@ -39,11 +57,14 @@ const Content = () => {
           md={9}
           spacing={2}
         >
-          <FlyInfos />
-          <Box width="100%">
-            <Divider color="#000000" />
-          </Box>
-          <FlyInfos />
+          <FlyInfos
+            information={{
+              initialIataCode: content.initialIataCode,
+              finalIataCode: content.finalIataCode,
+              flyInfos: content.flyInfos[0],
+            }}
+          />
+          {twoWayComponent}
         </Grid>
       </Grid>
       <Grid container item sm={3}>
@@ -82,7 +103,7 @@ const Content = () => {
               <Typography variant="subtitle1">R$ </Typography>
             </Box>
             <Box className={classes.positionCurrency}>
-              <Typography variant="subtitle2">2353,47</Typography>
+              <Typography variant="subtitle2">{content.price}</Typography>
             </Box>
           </Grid>
         </Grid>
@@ -99,7 +120,7 @@ const Content = () => {
               size="large"
               width="400px"
               color="secondary"
-              text="Mais Infos"
+              text="COMPRAR"
             />
           </Box>
         </Grid>
