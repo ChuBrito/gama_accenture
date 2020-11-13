@@ -22,7 +22,11 @@ const Login = () => {
       <Hidden smDown>
         <Grid id="login-bg-image" item md={6}>
           <Box display="flex" height="100%">
-            <img src={BgImageLogin} className={classes.bgImage} />
+            <img
+              src={BgImageLogin}
+              alt="background login"
+              className={classes.bgImage}
+            />
           </Box>
         </Grid>
       </Hidden>

@@ -5,13 +5,7 @@ import ProfileAvatar from "./profileAvatar/ProfileAvatar";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 
-const ProfileBio = ({
-  profileImage,
-  nameUser,
-  emailUser,
-  phoneUser,
-  saveInputs,
-}) => {
+const ProfileBio = ({ nameUser, emailUser, phoneUser, saveInputs }) => {
   const classes = useStyles();
   return (
     <Box width="100%">
@@ -25,7 +19,7 @@ const ProfileBio = ({
         alignItems="center"
       >
         <Grid id="profile-avatar-container" item xs={12} md={4}>
-          <ProfileAvatar profileImage={profileImage} />
+          <ProfileAvatar />
         </Grid>
         <Grid
           id="profile-form"
@@ -43,7 +37,7 @@ const ProfileBio = ({
             <CustomInput
               name="profile-email-input"
               type="email"
-              color="primary"
+              color="secondary"
               defaultValue={emailUser}
               noPlaceholder
             />

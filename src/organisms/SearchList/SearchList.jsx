@@ -1,22 +1,9 @@
-import { Box, Divider, Grid, GridList, List } from "@material-ui/core";
+import { Box, List } from "@material-ui/core";
 import React from "react";
 import InfoCard from "../../components/InfoCard/InfoCard";
+import PlaceHolderList from "./placeHolderList/PlaceHolderList";
 
-const MOCKITEM = {
-  initialDestination: "New York",
-  finalDestination: "Madrid",
-  flyType: "oneWay",
-  value: 455.45,
-  airline: "Gol",
-  flyInfo: "",
-  date: {
-    initialDate: "12/04/2021",
-    arriveDate: "12/05/2021",
-  },
-};
-
-const MOCKLIST = {};
-const SearchList = (searchResult) => {
+const SearchList = ({ searchResults }) => {
   return (
     <Box display="flex" flexDirection="column">
       <Box
@@ -28,14 +15,19 @@ const SearchList = (searchResult) => {
         <Box id="filtro"></Box>
       </Box>
       <List id="resultList">
-        <InfoCard data={MOCKITEM} />
-
-        <InfoCard data={MOCKITEM} />
-        <InfoCard data={MOCKITEM} />
-        <InfoCard data={MOCKITEM} />
-        <InfoCard data={MOCKITEM} />
-        <InfoCard data={MOCKITEM} />
-        <InfoCard data={MOCKITEM} />
+        {searchResults !== undefined ? (
+          searchResults.map((result) => {
+            console.log(result);
+            return (
+              <InfoCard
+                data={{ ...result, flyInfos: { ...result.flyInfos } }}
+                key={Object.keys(result)}
+              />
+            );
+          })
+        ) : (
+          <PlaceHolderList />
+        )}
       </List>
     </Box>
   );

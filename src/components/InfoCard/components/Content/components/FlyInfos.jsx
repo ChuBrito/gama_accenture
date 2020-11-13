@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Box, Divider, Grid } from "@material-ui/core";
-import { InfoContainer } from "../../styles";
+import { getDurHoursMinutes } from "../../../../../shared/utils/getDurationSum";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -9,6 +9,7 @@ const useStyles = makeStyles({
   },
 });
 const FlyInfos = ({ information }) => {
+  console.log(information);
   const classes = useStyles();
   return (
     <Grid
@@ -22,10 +23,10 @@ const FlyInfos = ({ information }) => {
     >
       <Grid item container direction="column" justify="center" xs={3}>
         <Box display="flex" justifyContent="center" fontWeight="fontWeightBold">
-          <Typography>23:15</Typography>
+          <Typography>{information.flyInfos.dates.initialTime}</Typography>
         </Box>
         <Box display="flex" justifyContent="center" fontWeight="fontWeightBold">
-          <Typography>CGH</Typography>
+          <Typography>{information.initialIataCode}</Typography>
         </Box>
       </Grid>
       <Grid
@@ -46,15 +47,17 @@ const FlyInfos = ({ information }) => {
         </Box>
         <Divider color="#000000" />
         <Box fontWeight="fontWeightBold">
-          <Typography>03h 20min</Typography>
+          <Typography>
+            {getDurHoursMinutes(information.flyInfos.flyDuration)}
+          </Typography>
         </Box>
       </Grid>
       <Grid item container direction="column" justify="center" xs={3}>
         <Box display="flex" justifyContent="center" fontWeight={400}>
-          <Typography>23:15</Typography>
+          <Typography>{information.flyInfos.dates.arriveTime}</Typography>
         </Box>
         <Box display="flex" justifyContent="center" fontWeight="fontWeightBold">
-          <Typography>CGH</Typography>
+          <Typography>{information.finalIataCode}</Typography>
         </Box>
       </Grid>
     </Grid>

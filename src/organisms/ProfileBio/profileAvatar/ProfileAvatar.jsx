@@ -15,7 +15,7 @@ const ProfileAvatar = (profileImage) => {
         <img
           height="100%"
           id="default-image"
-          src={profileImage || ProfilePhoto}
+          src={ProfilePhoto}
           alt="My face at placeholder"
         />
       </Box>

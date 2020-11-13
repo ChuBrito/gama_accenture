@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@material-ui/core/Box";
 import theme from "../../core/theme/theme";
 import SearchBarFields from "./components/SearchBarFields";
 
-const SearchBar = () => {
+const SearchBar = ({ searchHandler }) => {
+  const [searchObj, seatSearch] = useState({});
+
   const onChangeOneWay = (e) => {
+    //altera os o tipo de viagem do search obj
     console.log(e);
   };
   const onChangeInput = (e) => {
+    //altera os campos do search obj
     console.log(e.target.value);
   };
-
-  const sendSearchData = (e) => {
-    console.log(e);
-  };
+  const getLocations = (e) => {};
 
   return (
     <Box
@@ -23,8 +24,9 @@ const SearchBar = () => {
       justifyContent="center"
     >
       <SearchBarFields
-        sendSearchData={sendSearchData}
+        searchHandler={() => searchHandler(searchObj)}
         onChangeInput={onChangeInput}
+        onChangeLocation={getLocations}
         onChangeOneWay={onChangeOneWay}
       />
     </Box>
