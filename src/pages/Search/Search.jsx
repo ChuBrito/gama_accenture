@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+import React from 'react'
+import DefaultPage from '../../templates/DefaultPage/DefaultPage'
+=======
 import React, { useState } from "react";
 import DefaultPage from "../../templates/DefaultPage/DefaultPage";
 import SearchBar from "../../organisms/SearchBar/SearchBar";
@@ -38,6 +42,7 @@ const MOCKITEM = {
   ],
 };
 const MOCKSEARCHLIST = [MOCKITEM, MOCKITEM, MOCKITEM, MOCKITEM, MOCKITEM];
+>>>>>>> origin
 
 const Search = () => {
   const [results, setResults] = useState();
