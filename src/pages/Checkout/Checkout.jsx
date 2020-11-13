@@ -1,12 +1,12 @@
-import React from 'react'
-import DefaultPage from '../../templates/DefaultPage'
+import React from "react";
+import DefaultPage from "../../templates/DefaultPage/DefaultPage";
 
 const Checkout = () => {
-    return (
-        <DefaultPage>
-            
-        </DefaultPage>
-    )
-}
+  return (
+    <DefaultPage>
+      <div>Checkout</div>
+    </DefaultPage>
+  );
+};
 
-export default Checkout
+export default Checkout;
