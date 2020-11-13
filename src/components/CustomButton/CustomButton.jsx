@@ -1,21 +1,20 @@
-import React from 'react'
-import Button from '@material-ui/core/Button'
-import Icon from '@material-ui/core/Icon'
-import Typography from '@material-ui/core/Typography'
+import React from "react";
+import Button from "@material-ui/core/Button";
+import Icon from "@material-ui/core/Icon";
+import Typography from "@material-ui/core/Typography";
 
-const CustomButton = ({ text, iconName, color, onClick, margin }) => {
+const CustomButton = ({ text, iconName, color, onClick, size, variant}) => {
   return (
     <Button
-      margin={margin}
       variant='contained'
-      color={color}
-      size='medium'
+      color={color || "default"}
+      size={size}
       onClick={onClick}
-      startIcon={iconName ? <Icon>{iconName}</Icon> : ''}
+      startIcon={iconName ? <Icon>{iconName}</Icon> : ""}
     >
-      <Typography variant='body1'>{text}</Typography>
+      <Typography variant={variant || "body1"}>{text}</Typography>
     </Button>
-  )
-}
+  );
+};
 
-export default CustomButton
+export default CustomButton;
