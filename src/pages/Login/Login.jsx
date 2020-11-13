@@ -21,7 +21,7 @@ const Login = () => {
       <Hidden smDown>
         <Grid id="login-bg-image" item md={6}>
           <Box display="flex">
-            <img src={BgImageLogin} className={classes.bgImage} />
+            <img src={BgImageLogin} className={classes.bgImage} alt="Landscape"/>
           </Box>
         </Grid>
       </Hidden>
@@ -71,12 +71,7 @@ const Login = () => {
                 alignItems="stretch"
               >
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput
-                    color="primary"
-                    name="E-mail"
-                    type="email"
-                    onChange={(e) => onChangeHandler(e)}
-                  />
+                  <CustomInput color="primary" name="E-mail" type="email" onChange={e => setUser(e.target.value)}/>
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
                   <CustomInput
