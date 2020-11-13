@@ -5,14 +5,11 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PrivateRoute from "../../routes/PrivateRoute";
 import PublicRoute from "../../routes/PublicRoute";
 import Login from "../Login/Login";
-<<<<<<< HEAD
 import Register from "../Register/Register";
 import ForgotPassword from "../Login/ForgotPassword/ForgotPassword";
 import Search from "../Search/Search";
 import Checkout from "../Checkout/Checkout";
 import Profile from "../Profile/Profile";
-=======
->>>>>>> main
 
 const App = () => {
   return (
