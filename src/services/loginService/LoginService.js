@@ -1,4 +1,4 @@
-const LoginService = async (senha, usuario) => {
+export const login = async (senha, usuario) => {
   const REQ_METHOD = {
     method: "POST",
     headers: { Accept: "application/json", "Content-Type": "application/json" },
@@ -24,4 +24,8 @@ const LoginService = async (senha, usuario) => {
   });
 };
 
-export default LoginService;
+export const logout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("userId");
+  return true;
+};

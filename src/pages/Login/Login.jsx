@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
-import LoginService from "../../services/loginService/LoginService";
+import { login } from "../../services/loginService/LoginService";
 import BgImageLogin from "../../assets/login-background.png";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
@@ -90,7 +90,7 @@ const Login = () => {
                     iconName="send"
                     color="secondary"
                     onClick={() => {
-                      LoginService(password, user).then(() => {
+                      login(password, user).then(() => {
                         history.push("/");
                       });
                     }}

@@ -8,13 +8,21 @@ import {
   Grid,
 } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { logout } from "../../../services/loginService/LoginService";
+import { Link, useHistory } from "react-router-dom";
 
 const HeaderMenu = ({ loginHandler, authorized }) => {
+  const history = useHistory();
   const [menuOpen, setOpenMenu] = useState(false);
   const [elemAnchor, setElemAnchor] = useState(null);
   const openMenuHandler = (e) => {
     setElemAnchor(!menuOpen ? e.currentTarget : null);
     setOpenMenu(!menuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    history.push("/");
   };
 
   return (
@@ -29,9 +37,13 @@ const HeaderMenu = ({ loginHandler, authorized }) => {
           <Typography variant="h2">Profile</Typography>
         </Button>
         <Menu id="header-menu" open={menuOpen} anchorEl={elemAnchor}>
-          <MenuItem onClick={() => {}}>Profile</MenuItem>
-          <MenuItem onClick={() => {}}>Search</MenuItem>
-          <MenuItem onClick={loginHandler}>Logout</MenuItem>
+          <Link to="/profile">
+            <MenuItem>Profile</MenuItem>
+          </Link>
+          <Link to="/search">
+            <MenuItem>Search</MenuItem>
+          </Link>
+          <MenuItem onClick={() => handleLogout()}>Logout</MenuItem>
         </Menu>
       </Hidden>
       <Hidden smDown>
