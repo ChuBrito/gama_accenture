@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import LoginService from "../../services/loginService/LoginService";
 import BgImageLogin from "../../assets/login-background.png";
@@ -11,6 +11,7 @@ import useStyles from "./styles";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
+  const history = useHistory();
 
   const classes = useStyles();
   return (
@@ -89,9 +90,9 @@ const Login = () => {
                     iconName="send"
                     color="secondary"
                     onClick={() => {
-                      LoginService(password, user);
-
-
+                      LoginService(password, user).then(() => {
+                        history.push("/");
+                      });
                     }}
                   />
                 </Box>
