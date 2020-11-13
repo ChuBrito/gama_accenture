@@ -8,7 +8,7 @@ const USERDATAMOCK = {
   email: "fe.novo@fed.com",
   phone: "11 986111616",
 };
-
+//TODO: colocar indenticon
 const Profile = () => {
   const [userData, setUserData] = useState(USERDATAMOCK);
 
@@ -22,9 +22,6 @@ const Profile = () => {
 
   return (
     <DefaultPage>
-      <Typography color="textSecondary" variant="subtitle2">
-        testandoooo
-      </Typography>
       <Box
         display="flex"
         flexDirection="column"
@@ -51,7 +48,7 @@ const Profile = () => {
             <Grid id="profile-bios-item" item container>
               <ProfileBio
                 saveInputs={saveProfileHandler}
-                nameUser={userData.name.toString()}
+                nameUser={userData.name}
                 emailUser={userData.email}
                 phoneUser={userData.phone}
               />

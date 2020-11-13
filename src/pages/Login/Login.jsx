@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Logo from "../../components/Logo/Logo";
-import LoginService from "../../services/loginService/LoginService";
-import BgImageLogin from "../../assets/login-background.png";
-import CustomButton from "../../components/CustomButton/CustomButton";
-import CustomInput from "../../components/CustomInput/CustomInput";
 import { Box, Grid, Typography, Hidden } from "@material-ui/core";
 import useStyles from "./styles";
+import LoginService from "../../services/loginService/LoginService";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import CustomInput from "../../components/CustomInput/CustomInput";
+import BgImageLogin from "../../assets/login-background.png";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -16,6 +16,7 @@ const Login = () => {
   };
 
   const classes = useStyles();
+
   return (
     <Grid container className={classes.baseContainerLogin}>
       <Hidden smDown>

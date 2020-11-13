@@ -30,7 +30,14 @@ const CustomSearchFields = ({ onChangeInput }) => {
           name="Destino"
         ></CustomInput>
       </Grid>
-      <Grid item container direction="column" xs={12} md={4}>
+      <Grid
+        item
+        container
+        className={classes.customFlexBasisDate}
+        direction="column"
+        xs={12}
+        md={4}
+      >
         <FormLabel color="secondary">Datas</FormLabel>
         <FormGroup id="data" label="Datas" row className={classes.root}>
           <CustomInput

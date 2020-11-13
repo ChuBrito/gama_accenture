@@ -1,16 +1,12 @@
 import React from "react";
 import { Box, FormLabel, Grid } from "@material-ui/core";
+import useStyles from "./styles";
+import ProfileAvatar from "./profileAvatar/ProfileAvatar";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import ProfilePhoto from "../../assets/profile-avatar-placeholder.png";
 
-const ProfileBio = ({
-  profileImage = ProfilePhoto,
-  nameUser,
-  emailUser,
-  phoneUser,
-  saveInputs,
-}) => {
+const ProfileBio = ({ nameUser, emailUser, phoneUser, saveInputs }) => {
+  const classes = useStyles();
   return (
     <Box width="100%">
       <Grid
@@ -23,22 +19,7 @@ const ProfileBio = ({
         alignItems="center"
       >
         <Grid id="profile-avatar-container" item xs={12} md={4}>
-          <Box
-            id="profile-avatar"
-            display="flex"
-            height="300px"
-            padding="2px"
-            justifyContent="center"
-          >
-            <Box borderRadius="50%" overflow="hidden" height="100%">
-              <img
-                height="100%"
-                id="default-image"
-                src={profileImage}
-                alt="My face at placeholder"
-              />
-            </Box>
-          </Box>
+          <ProfileAvatar />
         </Grid>
         <Grid
           id="profile-form"
@@ -52,11 +33,11 @@ const ProfileBio = ({
           spacing={1}
         >
           <Grid id="email-container" container item direction="column" xs={10}>
-            <FormLabel color="primary">Email</FormLabel>
+            <FormLabel className={classes.labelsColor}>Email</FormLabel>
             <CustomInput
               name="profile-email-input"
               type="email"
-              color="primary"
+              color="secondary"
               defaultValue={emailUser}
               noPlaceholder
             />
@@ -69,7 +50,7 @@ const ProfileBio = ({
             sm={5}
             direction="column"
           >
-            <FormLabel color="primary">Nome</FormLabel>
+            <FormLabel className={classes.labelsColor}>Nome</FormLabel>
             <CustomInput
               name="profile-name-input"
               defaultValue={nameUser}
@@ -84,7 +65,7 @@ const ProfileBio = ({
             sm={5}
             direction="column"
           >
-            <FormLabel color="primary">Celular</FormLabel>
+            <FormLabel className={classes.labelsColor}>Celular</FormLabel>
             <CustomInput
               name="profile-phone-input"
               defaultValue={phoneUser}

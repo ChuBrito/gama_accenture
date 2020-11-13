@@ -25,7 +25,11 @@ const Header = () => {
   return (
     <AppBar position="fixed">
       <Toolbar>
-        {smBp ? <Logo height="90px" /> : <Logo line />}
+        {smBp ? (
+          <Logo height="90px" width="300px" padding="10px 0" />
+        ) : (
+          <Logo line width="45%" />
+        )}
         <Box
           className={classes.buttonWrapper}
           alignItems="center"
