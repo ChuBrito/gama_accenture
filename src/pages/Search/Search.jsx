@@ -1,5 +1,5 @@
 import React from 'react'
-import DefaultPage from '../../templates/DefaultPage'
+import DefaultPage from '../../templates/DefaultPage/DefaultPage'
 
 const Search = () => {
     return (
