@@ -37,6 +37,13 @@ const theme = createMuiTheme({
                 backgroundColor: "#F1F1F1",
             },
         },
+        MuiAccordionSummary: {
+            root: {
+                borderRadius: "5px",
+                backgroundColor: "#115D8C",
+                color: "#F1F1F1",
+            },
+        },
     },
     palette: {
         primary: {
