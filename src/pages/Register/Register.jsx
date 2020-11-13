@@ -1,21 +1,16 @@
 import React from 'react';
 import Logo from '../../components/Logo/Logo';
-import { Grid, Paper, TextField, Button } from '@material-ui/core';
+import { Grid, Paper, Box} from '@material-ui/core';
 import { ArrowRightAlt } from "@material-ui/icons";
-
-// import CustomInput from '../../components/CustomInput/CustomInput';
-// import CustomButton from '../../components/CustomButton/CustomButton';
+import CustomInput from '../../components/CustomInput/CustomInput';
+import CustomButton from '../../components/CustomButton/CustomButton';
 import useStyles from './RegisterComponentStyle/styles';
 import { ImageLogo, Title, LinkVoltar } from './styles';
 
+import * as Yup from 'yup';
 
 export const Register = () => {
     const classes = useStyles();
-
-    const handleCadastrar = (e) => {
-        e.preventDefault();
-        console.log('cadastrou');
-    }
 
     return (
         <Grid container className={classes.root}>
@@ -30,64 +25,77 @@ export const Register = () => {
                             Faça seu cadastro
                         </h1>
                     </Title>
+               
 
-                    <form className={classes.form} noValidate>
-                        {/* <Box >
-                            <CustomInput  Width="900px" name="teste aqui"/>
-                        </Box> */}
+                        <Grid
+                            id="login-form-items"
+                            container
+                            item
+                            direction="column"
+                            alignItems="center"
+                            >
+                            <Box
+                                display="flex"
+                                flexDirection="column"
+                                width="80%"
+                                maxWidth="450px"
+                                alignItems="stretch"
+                                
+                            >
+                                <Box display="flex" flexDirection="column" marginY="3px">
+                                    <CustomInput
+                                        color="primary"
+                                        name="CPF"
+                                        type="text"
+                                        
+                                    />
+                                </Box>
+                                <Box display="flex" flexDirection="column" marginY="3px">
+                                    <CustomInput
+                                        color="primary"
+                                        name="Email"
+                                        type="email"
+                                    />
+                                </Box>
+                                <Box display="flex" flexDirection="column" marginY="3px">
+                                    <CustomInput
+                                        color="primary"
+                                        name="Login"
+                                        type="text"
+                                    />
+                                </Box>
+                                <Box display="flex" flexDirection="column" marginY="3px">
+                                    <CustomInput
+                                        color="primary"
+                                        name="Nome"
+                                        type="text"
+                                    />
+                                </Box>
+                                <Box display="flex" flexDirection="column" marginY="3px">
+                                    <CustomInput
+                                        color="primary"
+                                        name="Senha"
+                                        type="password"
+                                    />
+                                </Box>
+                                <Box display="flex" flexDirection="column" marginY="3px">
+                                    <CustomButton
+                                        text="Cadastrar"
+                                        color="secondary"
+                                        type="submit"
+                                        
+                                    />
+                                </Box>
+                            </Box>
+                            <LinkVoltar>
+                                <a href="forgot">
+                                    Volta para login
+                                    <ArrowRightAlt />
+                                </a>
+                            </LinkVoltar>
+                        </Grid>
+            
 
-                        <TextField 
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="nome"
-                            label="Infome o seu nome"
-                            name="name"
-                            autoComplete="name"
-                            autoFocus
-                        />
-                        <TextField 
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="email"
-                            label="Email"
-                            name="email"
-                            autoComplete="email"
-                            autoFocus
-                        />
-                        <TextField 
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            label="Senha"
-                            name="senha"
-                            type="password"
-                            id="senha"
-                            autoComplete="current-password"
-                        />
-
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="container"
-                            color="primary"
-                            className={classes.submit}
-                            onClick={handleCadastrar}
-                        >
-                            Cadastrar
-                        </Button>
-
-                        <LinkVoltar>
-                            <a href="forgot">
-                                Volta para login
-                                <ArrowRightAlt />
-                            </a>
-                        </LinkVoltar>
-                    </form>
                 </div>
             </Grid>
             <Grid item xs={false} sm={8} md={7} className={classes.image} />

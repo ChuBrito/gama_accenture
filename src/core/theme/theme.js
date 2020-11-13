@@ -62,6 +62,19 @@ const theme = createMuiTheme({
             fontFamily: "Barlow",
             fontSize: "1.5rem",
         },
+        h3: {
+            fontFamily: "Heebo",
+            fontSize: "2rem",
+        },
+        h4: {
+            fontFamily: "Heebo",
+            fontSize: "1.75rem",
+        },
+        h5: {
+            fontFamily: "Heebo",
+            fontSize: "1.15rem",
+        }
+        ,
         body1: {
             fontFamily: "Heebo",
             font: "1rem",
