@@ -46,7 +46,7 @@ const MOCKITEM = {
   ],
 };
 
-const InfoCard = ({ data }) => {
+const InfoCard = ({ data, type }) => {
   console.log(data);
   const classes = useStyles();
   const dates = [];
