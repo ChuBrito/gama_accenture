@@ -2,18 +2,20 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 import { HeaderContainer } from "./styles";
 
-const Header = () => {
+const Header = ({ header, infos }) => {
+  const dateText = header.oneWay
+    ? `${infos[0].dates.initialDate} até ${infos[0].dates.arriveDate}`
+    : `${infos[0].dates.initialDate} até ${infos[1].dates.arriveDate}`;
+
   return (
     <HeaderContainer>
       <Typography>
-        {"Ida e Volta".toLocaleUpperCase()}
+        {(header.oneWay ? "Somente Ida" : "Ida e Volta").toLocaleUpperCase()}
       </Typography>
       <Typography>
-        São Paulo - Salvador
+        {`${header.initialDestination} - ${header.finalDestination}`}
       </Typography>
-      <Typography>
-        Novembro - 03 até 06 de 2020
-      </Typography>
+      <Typography>{dateText}</Typography>
     </HeaderContainer>
   );
 };

@@ -1,57 +1,131 @@
 import React from "react";
-import { Divider, Box, Typography } from "@material-ui/core";
+import { Divider, Box, Typography, Grid, Hidden } from "@material-ui/core";
 import CustomButton from "../../../CustomButton/CustomButton";
 import FlyInfos from "./components/FlyInfos";
-import { CardContent } from "../styles";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  containerInfos: {
+  positionCurrency: {
     display: "flex",
-    flexDirection: "column",
-  },
-  currencyBox: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "flex-end",
   },
-  infosBox: {
-    textAlign: "left",
-    width: "20%"
+  custonFlexBasis: {
+    flexBasis: "48%",
   },
 });
 
-const Content = () => {
+const Content = ({ content }) => {
+  console.log(content.flyInfos);
   const classes = useStyles();
 
+  const twoWayComponent = !content.oneWay ? (
+    <>
+      <Box width="100%">
+        <Divider color="#000000" />
+      </Box>
+      <FlyInfos
+        information={{
+          initialIataCode: content.initialIataCode,
+          finalIataCode: content.finalIataCode,
+          flyInfos: content.flyInfos[1],
+        }}
+      />
+    </>
+  ) : null;
+
   return (
-    <CardContent>
-      <Typography variant="h1">GOL</Typography>
-      <div className={classes.containerInfos}>
-        <FlyInfos />
-        <Divider />
-        <FlyInfos />
-      </div>
-      <div className={classes.infosBox}>
-        <div className={classes.alignLeft}>
-          <Typography>
-            <Box color="#617480">Por adulto</Box>
-          </Typography>
-          <Typography>
-            <Box color="#617480">Taxas e tarifas</Box>
-          </Typography>
-        </div>
-
-        <Divider />
-
-        <div className={classes.currencyBox}>
-          <Box fontSize="2em">R$ </Box>
-          <Box fontSize="3em">353,47</Box>
-        </div>
-        <CustomButton size="large" color="secondary" text="Mais Infos" />
-      </div>
-    </CardContent>
+    <Grid container item>
+      <Grid
+        container
+        item
+        direction="row"
+        alignItems="center"
+        justify="center"
+        md={2}
+      >
+        <Box margin="10px" textAlign="center">
+          <Typography variant="h1">{content.flyInfos[0].airline}</Typography>
+        </Box>
+      </Grid>
+      <Grid container item justify="center" sm={7}>
+        <Grid
+          container
+          item
+          direction="column"
+          alignItems="center"
+          md={9}
+          spacing={2}
+        >
+          <FlyInfos
+            information={{
+              initialIataCode: content.initialIataCode,
+              finalIataCode: content.finalIataCode,
+              flyInfos: content.flyInfos[0],
+            }}
+          />
+          {twoWayComponent}
+        </Grid>
+      </Grid>
+      <Grid container item sm={3}>
+        <Grid container item justify="center" md={12}>
+          <Grid
+            item
+            container
+            justify="center"
+            alignContent="center"
+            xs={5}
+            md={12}
+          >
+            <Box
+              display="flex"
+              color="#617480"
+              justifyContent="center"
+              flexDirection="column"
+              textAlign="center"
+            >
+              <Typography>Por adulto </Typography>
+              <Typography>Taxas e tarifas</Typography>
+            </Box>
+          </Grid>
+          <Hidden mdUp>
+            <Divider orientation="vertical" />
+          </Hidden>
+          <Grid
+            item
+            container
+            justify="center"
+            alignContent="center"
+            xs={5}
+            md={12}
+          >
+            <Box className={classes.positionCurrency}>
+              <Typography variant="subtitle1">R$ </Typography>
+            </Box>
+            <Box className={classes.positionCurrency}>
+              <Typography variant="subtitle2">{content.price}</Typography>
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          container
+          direction="column"
+          justify="center"
+          xs={12}
+          md={12}
+        >
+          <Box dispplay="flex" margin="0 auto">
+            <CustomButton
+              size="large"
+              width="400px"
+              color="secondary"
+              text="COMPRAR"
+            />
+          </Box>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 

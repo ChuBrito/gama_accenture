@@ -5,8 +5,7 @@ import { login } from "../../services/loginService/LoginService";
 import BgImageLogin from "../../assets/login-background.png";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import { Box, Grid, Typography, Hidden } from "@material-ui/core";
-import useStyles from "./styles";
+import BgImageLogin from "../../assets/login-background.png";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -14,12 +13,23 @@ const Login = () => {
   const history = useHistory();
 
   const classes = useStyles();
+
+  const handleLogin = () => {
+    login(password, user).then(() => {
+      history.push("/");
+    });
+  };
+
   return (
     <Grid container className={classes.baseContainerLogin}>
       <Hidden smDown>
-        <Grid id="login-bg-image" item xs="0" md="6">
+        <Grid id="login-bg-image" item md={6}>
           <Box display="flex">
-            <img src={BgImageLogin} className={classes.bgImage} alt="travel" />
+            <img
+              src={BgImageLogin}
+              className={classes.bgImage}
+              alt="Landscape"
+            />
           </Box>
         </Grid>
       </Hidden>
@@ -27,8 +37,8 @@ const Login = () => {
         id="login-form-container"
         container
         item
-        xs="12"
-        md="6"
+        xs={12}
+        md={6}
         alignItems="center"
       >
         <Box
@@ -43,10 +53,10 @@ const Login = () => {
             direction="column"
             justify="center"
             alignItems="center"
-            xs="12"
+            xs={12}
             spacing={3}
           >
-            <Grid id="login-form-image" container item justify="center" xs="9">
+            <Grid id="login-form-image" container item justify="center" xs={9}>
               <Logo large width="400px" />
             </Grid>
             <Grid id="login-form-title" item>
@@ -89,11 +99,7 @@ const Login = () => {
                     text="Entrar"
                     iconName="send"
                     color="secondary"
-                    onClick={() => {
-                      login(password, user).then(() => {
-                        history.push("/");
-                      });
-                    }}
+                    onClick={() => handleLogin()}
                   />
                 </Box>
               </Box>
