@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Grid, Hidden, Box, Typography } from "@material-ui/core";
 import Logo from "../../components/Logo/Logo";
 import { login } from "../../services/loginService/LoginService";
 import BgImageLogin from "../../assets/login-background.png";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import BgImageLogin from "../../assets/login-background.png";
+import useStyles from "./styles";
 
 const Login = () => {
   const [password, setPassword] = useState("");
