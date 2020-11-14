@@ -1,4 +1,4 @@
-import LoginService from "../loginService/LoginService";
+import { login } from "../loginService/LoginService";
 
 const RegisterService = async (userData) => {
     const REQ_METHOD = {
@@ -16,7 +16,7 @@ const RegisterService = async (userData) => {
     await fetch("https://javatravelers-backend.azurewebsites.net/signup", REQ_METHOD)
     .then(async (response) => {
         if(response.ok) {
-            LoginService(userData.senha, userData.email)
+            login(userData.senha, userData.email)
         } else {
             alert("Não foi possível realizar o cadastro")    
         }
