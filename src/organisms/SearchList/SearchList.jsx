@@ -3,7 +3,7 @@ import React from "react";
 import InfoCard from "../../components/InfoCard/InfoCard";
 import PlaceHolderList from "./placeHolderList/PlaceHolderList";
 
-const SearchList = ({ searchResults }) => {
+const SearchList = ({ searchResults, openDetailsHandler }) => {
   return (
     <Box display="flex" flexDirection="column">
       <Box
@@ -16,12 +16,12 @@ const SearchList = ({ searchResults }) => {
       </Box>
       <List id="resultList">
         {searchResults !== undefined ? (
-          searchResults.map((result) => {
-            console.log(result);
+          searchResults.map((result, index) => {
             return (
               <InfoCard
                 data={{ ...result, flyInfos: { ...result.flyInfos } }}
-                key={Object.keys(result)}
+                key={index + "tck"}
+                actionFunction={openDetailsHandler}
               />
             );
           })

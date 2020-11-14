@@ -1,14 +1,23 @@
-import styled from 'styled-components';
+import { makeStyles } from "@material-ui/core/styles";
+import styled from "styled-components";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: "100%",
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+    },
+}));
 
 export const Container = styled.div `
   height: 180vh;
-  background-color: #F5F8FA;
+  background-color: #f5f8fa;
   padding: 20px;
-
 `;
 
-
-export const ModalBorder = styled.div`
+export const ModalBorder = styled.div `
   border: 1px solid #000000;
   border-radius: 30px;
   width: 100%;
@@ -56,7 +65,7 @@ export const Content = styled.div `
     left: 76%;
     margin-bottom: 10px;
   }
-`
+`;
 
 export const ContainerForm = styled.div `
   display: flex;
@@ -67,7 +76,7 @@ export const ContainerForm = styled.div `
     display: flex;
     justify-content: space-between;
 
-    .btn-one{
+    .btn-one {
       margin-right: 5px;
 
       > button {
@@ -81,10 +90,9 @@ export const ContainerForm = styled.div `
         font-size: 16px;
       }
     }
-    
-    .btn-two  {
-      margin-left: 5px;
 
+    .btn-two {
+      margin-left: 5px;
 
       > button {
         color: #fff;
@@ -98,7 +106,7 @@ export const ContainerForm = styled.div `
       }
     }
   }
-`
+`;
 
 export const ContentInput = styled.div `
   display: flex;
@@ -108,5 +116,5 @@ export const ContentInput = styled.div `
     padding: 4px;
     width: 200px;
   }
-`
-
+`;
+export default useStyles;

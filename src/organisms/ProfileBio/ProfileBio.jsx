@@ -5,17 +5,23 @@ import ProfileAvatar from "./profileAvatar/ProfileAvatar";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 
-const ProfileBio = ({ nameUser, emailUser, phoneUser, saveInputs }) => {
+const ProfileBio = ({
+  nameUser,
+  emailUser,
+  phoneUser,
+  documentUser,
+  saveInputs,
+}) => {
   const classes = useStyles();
   return (
-    <Box width="100%">
+    <Box width="100%" margin="30px 10px">
       <Grid
         id="profilebio-card"
         container
         item
         direction="row"
         width="100%"
-        justify="center"
+        justify="space-around"
         alignItems="center"
       >
         <Grid id="profile-avatar-container" item xs={12} md={4}>
@@ -26,8 +32,7 @@ const ProfileBio = ({ nameUser, emailUser, phoneUser, saveInputs }) => {
           container
           item
           xs={12}
-          md={6}
-          lg={5}
+          md={7}
           direction="row"
           justify="center"
           spacing={1}
@@ -42,6 +47,16 @@ const ProfileBio = ({ nameUser, emailUser, phoneUser, saveInputs }) => {
               noPlaceholder
             />
           </Grid>
+          <Grid id="email-container" container item direction="column" xs={10}>
+            <FormLabel className={classes.labelsColor}>Nome</FormLabel>
+            <CustomInput
+              name="profile-email-input"
+              type="email"
+              color="secondary"
+              defaultValue={nameUser}
+              noPlaceholder
+            />
+          </Grid>
           <Grid
             id="name-container"
             container
@@ -50,10 +65,11 @@ const ProfileBio = ({ nameUser, emailUser, phoneUser, saveInputs }) => {
             sm={5}
             direction="column"
           >
-            <FormLabel className={classes.labelsColor}>Nome</FormLabel>
+            <FormLabel className={classes.labelsColor}>CPF</FormLabel>
             <CustomInput
               name="profile-name-input"
-              defaultValue={nameUser}
+              color="secondary"
+              defaultValue={documentUser}
               noPlaceholder
             />
           </Grid>
@@ -69,6 +85,7 @@ const ProfileBio = ({ nameUser, emailUser, phoneUser, saveInputs }) => {
             <CustomInput
               name="profile-phone-input"
               defaultValue={phoneUser}
+              color="secondary"
               noPlaceholder
             />
           </Grid>
