@@ -18,7 +18,7 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
 
 - Cadastro do usuário, login e logout;
 - Criação de uma página de perfil para o usuário onde apareçam suas principais informações, reservas realizadas e passagens compradas;
-- Página de  busca de passagens aéreas, integrada com o máximo de companhias/sites de busca possível, com filtros de data, origem e destino, e classificação por relevância e preço;
+- Página de busca de passagens aéreas, integrada com o máximo de companhias/sites de busca possível, com filtros de data, origem e destino, e classificação por relevância e preço;
 - Checkout integrado com meio de pagamento;
 - Função de compartilhar uma passagem integrada com alguma rede social;
 - Função de favoritar uma passagem e página de exibição de favoritos.
@@ -37,25 +37,28 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
 ## Tópicos que devemos responder sobre o Projeto
 
 - Quais cerimônias, papeis, artefatos do Scrum foram utilizados.
+
   - Realizamos apenas as daily durante todos os dias para acompanhar.
   - Fizemos a planning no começo do projeto para dividir as tarefas a serem feitas.
   - pelo tempo apertado não conseguimos utilizar a sprint de uma semana e fizemos somente a divisdão de tarefas e acompanhemento diário com as dailys
 
 - Quais foram as maiores dificuldades no trabalho em equipe, aprendizados e desenvolvimentos que vocês experimentaram durante a execução desse projeto?
-  - Tivemos Algumas dificuldades principalmente pelo conflito de de horários. Achavamos que iamos ter mais tempo disponível diariamente para realizar as tarefas.
+
+  - Tivemos algumas dificuldades principalmente pelo conflito de horários. Achavamos que iamos ter mais tempo disponível diariamente para realizar as tarefas.
   - Fizemos algumas escolhas que acabaram impactando nossa performance, que foi o caso da biblioteca do Material Ui, que teve uma curva de aprendizado maior que a prevista.
-  - Não conseguimos fazer a integração de todos com API o com tempo que tivemos. Por isso focamos mais nos requestitos principais de front.
+  - Não conseguimos fazer a integração de todos com API o com tempo que tivemos. Por isso focamos mais nos requesitos principais de front.
 
 - Vocês também devem explicar qual lógica utilizaram na escolha da equipe, por que seus perfis se complementam, fortalezas e pontos de melhoria de cada um.
   - Para a escolhas de todas as equipes reunimos todos os participantes da Academia de Front-end e dividimos apartir dos con hecimentos que tinhamos em programação, criação de design e conhecimento de serviços.
-  - Nossa equipe ficou bem equilibrada em questão de conhecimentos gerais.E conseguimos suprir duvidas um dos outros durante o desenvolvimento. 
+  - Nossa equipe ficou bem equilibrada em questão de conhecimentos gerais. E conseguimos suprir dúvidas um dos outros durante o desenvolvimento.
 - Como planejaram a infraestrutura do projeto, seus testes e configurações gerais de TI.
   - Nos baseamos na estrutura Atomic para criação de componentes. Utilizamos o Material Ui para definir o padrão de estilos e quando precisavamos utilizamos o Styled-Components para fazer alguns ajustes.
   - No útimo dia do curso faremos uma apresentação para Banca da Accenture.
 
 ## Commits feitos
 
-  ### Diego
+### Diego
+
     Estrutura das pastas e criacao da base dos componentes
     Card component
     CustomButton e CustomInput
@@ -66,8 +69,13 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
     Card quase finalizado, falta arrumar CSS
     Card finalizado, falta corrigir CSS
     Receber data no card
-    
-  ### Felipe
+    Correcao do padrao dos codigos com prettier
+    Rotas no header
+    Header comp
+    filtrar por preço
+
+### Felipe
+
     Criação do projeto React
     Commit inicial
     Criação do tema
@@ -87,19 +95,29 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
     Search mock list
     Style fixes search list
     Dynamic search list and minor fixes
-    
-  ### Luiz
+    Minor main impor fixes
+    Modal for tickets aplied
+    Search modal aplied
+
+### Luiz
+
     Adding the Register components and folder organization
     Adding more an tag 'link' in Register
     Adding the layout ForgotPassword
     Adding new inputs in register
     Expected style components
     Done in the Modal.js layout / necessary to create components
-    Adding new titles for theme.js 
+    Adding new titles for theme.js
     Creating the layout checkout, putting new styles
     Add more item for the checkout
-    
- ### Mateus
+    Adding favorite functionality
+    Fix - added new ui material components to render
+    Fix - changing the LoginService to login
+    Fix' - removng the input login
+    Adding styles.css in components for label search
+
+### Mateus
+
     Adicionada tela de login, com inputs e botão custom. Criado arquivo 'Login.css
     User login added, consuming API.
     Implementado teste de requisição em 'LoginService' e 'Login.jsx'
@@ -108,3 +126,4 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
     Location search implemented. Fixed import in Search component.
     Merge conflict resolved
     Register service implemented. Catch added in login service.
+    Service to list tickets implemented.
