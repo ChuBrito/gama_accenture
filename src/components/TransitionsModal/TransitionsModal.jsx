@@ -15,6 +15,7 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 import CardTravelIcon from "@material-ui/icons/CardTravel";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
+import StarIcon from "@material-ui/icons/Star";
 
 import CustomButton from "../CustomButton/CustomButton";
 import ModalFlyInfo from "./component/ModalFlyInfo";
@@ -26,10 +27,37 @@ const TransitionsModal = ({
   ticket = TICKET_MOCK_1,
   open: openProps,
   onClose,
+  favorited,
 }) => {
   const classes = useStyles();
   const open = useMemo(() => openProps && !!ticket, [openProps, ticket]);
-  console.log(ticket);
+
+  const [isfavorited, setFavorited] = useState(favorited);
+
+  async function favoritedToggleAdd() {
+    const favorites = localStorage.getItem("favorites");
+
+    let favoritesArray = [];
+
+    if (favorites) {
+      favoritesArray = JSON.parse(favorites);
+    }
+
+    if (isfavorited) {
+      // remover os favoritos
+      const favoriteIndex = favoritesArray.findIndex((ticketItem) => {
+        return ticketItem.id === ticket.id;
+      });
+
+      favoritesArray.splice(favoriteIndex, 1);
+      setFavorited(false);
+    } else {
+      favoritesArray.push(ticket);
+
+      setFavorited(true);
+    }
+    await localStorage.setItem("favorites", JSON.stringify(favoritesArray));
+  }
   return (
     <Modal
       xs={12}
@@ -170,7 +198,17 @@ const TransitionsModal = ({
                         alignItems="center"
                         justifyContent="center"
                       >
-                        <StarBorderIcon className={classes.ModalPrice} />
+                        <IconButton
+                          edge="start"
+                          color="inherit"
+                          onClick={favoritedToggleAdd}
+                        >
+                          {isfavorited ? (
+                            <StarIcon className={classes.ModalPrice} />
+                          ) : (
+                            <StarBorderIcon className={classes.ModalPrice} />
+                          )}
+                        </IconButton>
                       </Box>
                     </Box>
                   </Grid>

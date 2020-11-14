@@ -10,6 +10,8 @@ import {
   Toolbar,
 } from "@material-ui/core";
 
+import { Link } from "react-router-dom";
+
 import CardTravelIcon from "@material-ui/icons/CardTravel";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import AirlineSeatReclineNormalIcon from "@material-ui/icons/AirlineSeatReclineNormal";
@@ -67,9 +69,6 @@ const Checkout = () => {
 
   return (
     <>
-      {/* <DefaultPage>
-            
-      </DefaultPage> */}
       <Container>
         <Toolbar className={classes.headerTitle}>
           <Typography variant="h4" className={classes.fontVoo}>
@@ -77,8 +76,7 @@ const Checkout = () => {
           </Typography>
 
           <Typography>
-            <a href="/">voltar</a>{" "}
-            {/* colocar o link de volta para tela anterior */}
+            <Link to="/">voltar</Link>{" "}
           </Typography>
         </Toolbar>
 

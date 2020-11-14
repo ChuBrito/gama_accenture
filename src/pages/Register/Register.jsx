@@ -77,9 +77,7 @@ export const Register = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </Box>
-              <Box display="flex" flexDirection="column" marginY="3px">
-                {/* <CustomInput color="primary" name="Login" type="text" /> */}
-              </Box>
+              <Box display="flex" flexDirection="column" marginY="3px"></Box>
               <Box display="flex" flexDirection="column" marginY="3px">
                 <CustomInput
                   color="primary"

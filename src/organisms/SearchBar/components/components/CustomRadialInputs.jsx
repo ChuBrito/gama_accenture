@@ -6,6 +6,8 @@ import {
   Radio,
 } from "@material-ui/core";
 
+import "./styles.css";
+
 const CustomRadialInputs = ({ onChangeOneWay }) => {
   return (
     <FormControl>

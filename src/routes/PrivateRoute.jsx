@@ -1,5 +1,5 @@
 import { Route, Redirect } from "react-router-dom";
-import {isLogged} from "../core/utils/utils";
+import { isLogged } from "../core/utils/utils";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -8,8 +8,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       isLogged() ? (
         <Component {...props} />
       ) : (
-        <Redirect 
-            to={{ pathname: "/login", state: { from: props.location } }}
+        <Redirect
+          to={{ pathname: "/login", state: { from: props.location } }}
         />
       )
     }
