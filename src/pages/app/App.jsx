@@ -16,12 +16,20 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Switch>
-          <PrivateRoute component={Search} path="/" exact={true}/>
+          <PrivateRoute component={Search} path="/" exact={true} />
           <PublicRoute restricted={false} component={Login} path="/login" />
-          <PublicRoute restricted={false} component={Register} path="/register" />
-          <PublicRoute restricted={false} component={ForgotPassword} path="/forgot-password" />
-          <PrivateRoute component={Checkout} path="/checkout" exact={true}/>
-          <PrivateRoute component={Profile} path="/profile" exact={true}/>
+          <PublicRoute
+            restricted={false}
+            component={Register}
+            path="/register"
+          />
+          <PublicRoute
+            restricted={false}
+            component={ForgotPassword}
+            path="/forgot-password"
+          />
+          <PrivateRoute component={Checkout} path="/checkout" exact={true} />
+          <PrivateRoute component={Profile} path="/profile" exact={true} />
           <Route path="*" component={() => <div>Erro 404</div>} />
         </Switch>
       </BrowserRouter>
