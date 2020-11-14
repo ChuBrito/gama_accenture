@@ -37,15 +37,74 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
 ## Tópicos que devemos responder sobre o Projeto
 
 - Quais cerimônias, papeis, artefatos do Scrum foram utilizados.
+  - Realizamos apenas as daily durante todos os dias para acompanhar.
+  - Fizemos a planning no começo do projeto para dividir as tarefas a serem feitas.
+  - pelo tempo apertado não conseguimos utilizar a sprint de uma semana e fizemos somente a divisdão de tarefas e acompanhemento diário com as dailys
 
 - Quais foram as maiores dificuldades no trabalho em equipe, aprendizados e desenvolvimentos que vocês experimentaram durante a execução desse projeto?
+  - Tivemos Algumas dificuldades principalmente pelo conflito de de horários. Achavamos que iamos ter mais tempo disponível diariamente para realizar as tarefas.
+  - Fizemos algumas escolhas que acabaram impactando nossa performance, que foi o caso da biblioteca do Material Ui, que teve uma curva de aprendizado maior que a prevista.
+  - Não conseguimos fazer a integração de todos com API o com tempo que tivemos. Por isso focamos mais nos requestitos principais de front.
 
 - Vocês também devem explicar qual lógica utilizaram na escolha da equipe, por que seus perfis se complementam, fortalezas e pontos de melhoria de cada um.
-
+  - Para a escolhas de todas as equipes reunimos todos os participantes da Academia de Front-end e dividimos apartir dos con hecimentos que tinhamos em programação, criação de design e conhecimento de serviços.
+  - Nossa equipe ficou bem equilibrada em questão de conhecimentos gerais.E conseguimos suprir duvidas um dos outros durante o desenvolvimento. 
 - Como planejaram a infraestrutura do projeto, seus testes e configurações gerais de TI.
-
-- No útimo dia do curso faremos uma apresentação para Banca da Accenture.
+  - Nos baseamos na estrutura Atomic para criação de componentes. Utilizamos o Material Ui para definir o padrão de estilos e quando precisavamos utilizamos o Styled-Components para fazer alguns ajustes.
+  - No útimo dia do curso faremos uma apresentação para Banca da Accenture.
 
 ## Commits feitos
 
-- Commit inicial do projeto e read.me/ gitignore - Felipe Brito.
+  ### Diego
+    Estrutura das pastas e criacao da base dos componentes
+    Card component
+    CustomButton e CustomInput
+    Card não finalizado
+    Card atualizado
+    Styles of card
+    Resolve app
+    Card quase finalizado, falta arrumar CSS
+    Card finalizado, falta corrigir CSS
+    Receber data no card
+    
+  ### Felipe
+    Criação do projeto React
+    Commit inicial
+    Criação do tema
+    Organização das pastas
+    Searchbar component in progress
+    Styled search component and folder organization
+    Header logged off
+    Responsive header and folder correction
+    Profilebios component ok Profile wip
+    Logo update to login
+    Profile e bioprofile fixes
+    Changes on images
+    Adaptação do login, logo e deafaultpage
+    Fix no header e search, componentizçao login
+    Profilebio e searchlist update
+    Search mounting pages
+    Search mock list
+    Style fixes search list
+    Dynamic search list and minor fixes
+    
+  ### Luiz
+    Adding the Register components and folder organization
+    Adding more an tag 'link' in Register
+    Adding the layout ForgotPassword
+    Adding new inputs in register
+    Expected style components
+    Done in the Modal.js layout / necessary to create components
+    Adding new titles for theme.js 
+    Creating the layout checkout, putting new styles
+    Add more item for the checkout
+    
+ ### Mateus
+    Adicionada tela de login, com inputs e botão custom. Criado arquivo 'Login.css
+    User login added, consuming API.
+    Implementado teste de requisição em 'LoginService' e 'Login.jsx'
+    Grid in login page. Custom input fix. Dependency fix.
+    Search service implemented. Fix on SearchService nomenclature.
+    Location search implemented. Fixed import in Search component.
+    Merge conflict resolved
+    Register service implemented. Catch added in login service.

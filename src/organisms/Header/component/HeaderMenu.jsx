@@ -12,7 +12,7 @@ import { logout } from "../../../services/loginService/LoginService";
 
 import { Link, useHistory } from "react-router-dom";
 
-const HeaderMenu = ({ loginHandler, authorized }) => {
+const HeaderMenu = () => {
   const history = useHistory();
   const [menuOpen, setOpenMenu] = useState(false);
   const [elemAnchor, setElemAnchor] = useState(null);
@@ -49,9 +49,13 @@ const HeaderMenu = ({ loginHandler, authorized }) => {
       </Hidden>
       <Hidden smDown>
         <Grid container justify="space-around">
-          <Button>Profile</Button>
-          <Button>Search</Button>
-          <Button>Logout</Button>
+          <Link to="/profile">
+            <Button>Profile</Button>
+          </Link>
+          <Link to="/">
+            <Button>Search</Button>
+          </Link>
+          <Button onClick={() => handleLogout()}>Logout</Button>
         </Grid>
       </Hidden>
     </>
