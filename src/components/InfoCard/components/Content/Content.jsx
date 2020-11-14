@@ -1,72 +1,21 @@
 import React from "react";
 import { Divider, Box, Typography, Grid, Hidden } from "@material-ui/core";
 import CustomButton from "../../../CustomButton/CustomButton";
-import FlyInfos from "./components/FlyInfos";
-import { makeStyles } from "@material-ui/core/styles";
+import useStyles from "./styles";
+import ContentDetails from "./components/ContentDetails";
 
-const useStyles = makeStyles({
-  positionCurrency: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "flex-end",
-  },
-  custonFlexBasis: {
-    flexBasis: "48%",
-  },
-});
-
-const Content = ({ content }) => {
-  console.log(content.flyInfos);
+const Content = ({
+  content,
+  reserv,
+  bookmarked,
+  data,
+  ticketDetailsHandler,
+}) => {
   const classes = useStyles();
-
-  const twoWayComponent = !content.oneWay ? (
-    <>
-      <Box width="100%">
-        <Divider color="#000000" />
-      </Box>
-      <FlyInfos
-        information={{
-          initialIataCode: content.initialIataCode,
-          finalIataCode: content.finalIataCode,
-          flyInfos: content.flyInfos[1],
-        }}
-      />
-    </>
-  ) : null;
 
   return (
     <Grid container item>
-      <Grid
-        container
-        item
-        direction="row"
-        alignItems="center"
-        justify="center"
-        md={2}
-      >
-        <Box margin="10px" textAlign="center">
-          <Typography variant="h1">{content.flyInfos[0].airline}</Typography>
-        </Box>
-      </Grid>
-      <Grid container item justify="center" sm={7}>
-        <Grid
-          container
-          item
-          direction="column"
-          alignItems="center"
-          md={9}
-          spacing={2}
-        >
-          <FlyInfos
-            information={{
-              initialIataCode: content.initialIataCode,
-              finalIataCode: content.finalIataCode,
-              flyInfos: content.flyInfos[0],
-            }}
-          />
-          {twoWayComponent}
-        </Grid>
-      </Grid>
+      <ContentDetails content={content} />
       <Grid container item sm={3}>
         <Grid container item justify="center" md={12}>
           <Grid
@@ -84,8 +33,8 @@ const Content = ({ content }) => {
               flexDirection="column"
               textAlign="center"
             >
-              <Typography>Por adulto </Typography>
-              <Typography>Taxas e tarifas</Typography>
+              <Typography>Valor Total</Typography>
+              <Typography>(sem taxas / tarifas)</Typography>
             </Box>
           </Grid>
           <Hidden mdUp>
@@ -116,12 +65,23 @@ const Content = ({ content }) => {
           md={12}
         >
           <Box dispplay="flex" margin="0 auto">
-            <CustomButton
-              size="large"
-              width="400px"
-              color="secondary"
-              text="COMPRAR"
-            />
+            {bookmarked ? (
+              <CustomButton
+                size="large"
+                width="400px"
+                color="secondary"
+                text="COMPRAR"
+                onClick={() => ticketDetailsHandler(data)}
+              />
+            ) : (
+              <CustomButton
+                size="large"
+                width="400px"
+                color="secondary"
+                text="DETALHES"
+                onClick={() => ticketDetailsHandler(data)}
+              />
+            )}
           </Box>
         </Grid>
       </Grid>

@@ -37,6 +37,13 @@ const theme = createMuiTheme({
                 backgroundColor: "#F1F1F1",
             },
         },
+        MuiAccordionSummary: {
+            root: {
+                borderRadius: "5px",
+                backgroundColor: "#115D8C",
+                color: "#F1F1F1",
+            },
+        },
     },
     palette: {
         primary: {
@@ -73,8 +80,7 @@ const theme = createMuiTheme({
         h5: {
             fontFamily: "Heebo",
             fontSize: "1.15rem",
-        }
-        ,
+        },
         body1: {
             fontFamily: "Heebo",
             font: "1rem",
@@ -89,7 +95,7 @@ const theme = createMuiTheme({
         },
         subtitle2: {
             fontFamily: "Heebo",
-            fontSize: "2.4em",
+            fontSize: "1.8em",
         },
     },
 });

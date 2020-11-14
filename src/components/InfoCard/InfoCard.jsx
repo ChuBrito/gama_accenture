@@ -11,45 +11,9 @@ const useStyles = makeStyles({
   },
 });
 
-const MOCKITEM = {
-  initialDestination: "New York",
-  initialIataCode: "NYC",
-  finalDestination: "Madrid",
-  finalIataCode: "MAD",
-  oneWay: "true",
-  value: 455.45,
-  flyInfos: [
-    {
-      //infos da ida
-      airline: "Gol", // ele envia o codigo ai tem que traduzir pelo campo dictionaries no final da response
-      flyType: "Econômica",
-      flyDuration: "1:00",
-      dates: {
-        initialDate: "12/04/2021",
-        initialTime: "17:00",
-        arriveDate: "12/05/2021",
-        arriveTime: "13:00",
-      },
-    },
-    {
-      //infos da volta
-      airline: "Gol",
-      flyType: "Econômica",
-      flyDuration: "1:00",
-      dates: {
-        initialDate: "12/04/2021",
-        initialTime: "17:00",
-        arriveDate: "12/05/2021",
-        arriveTime: "13:00",
-      },
-    },
-  ],
-};
-
-const InfoCard = ({ data }) => {
-  console.log(data);
+const InfoCard = ({ data, reserv, bookmarked, actionFunction }) => {
   const classes = useStyles();
-  const dates = [];
+
   const header_info = {
     initialDestination: data.initialDestination,
     finalDestination: data.finalDestination,
@@ -63,10 +27,27 @@ const InfoCard = ({ data }) => {
     oneWay: data.oneWay,
     flyInfos: { ...data.flyInfos },
   };
+
+  const shareMyTicket = () => {
+    alert("sharing");
+    //TODO: Chamada para compartilhar informações da passagem em rede social
+  };
+
   return (
     <Card className={classes.cardStyles}>
-      <Header header={header_info} infos={{ ...data.flyInfos }} />
-      <Content content={content_info} />
+      <Header
+        header={header_info}
+        infos={{ ...data.flyInfos }}
+        share={reserv || bookmarked}
+        shareHandler={shareMyTicket}
+      />
+      <Content
+        content={content_info}
+        reserv={reserv}
+        bookmarked={bookmarked}
+        ticketDetailsHandler={actionFunction}
+        data={data}
+      />
     </Card>
   );
 };
