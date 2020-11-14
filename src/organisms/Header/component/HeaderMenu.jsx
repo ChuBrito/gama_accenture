@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { logout } from "../../../services/loginService/LoginService";
+
 import { Link, useHistory } from "react-router-dom";
 
 const HeaderMenu = () => {

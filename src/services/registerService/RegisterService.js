@@ -18,14 +18,13 @@ const RegisterService = async (userData) => {
     REQ_METHOD
   )
     .then(async (response) => {
-      if (response.ok) {
-        login(userData.senha, userData.email);
-      } else {
-        alert("Não foi possível realizar o cadastro");
-      }
-    })
-    .catch(() => {
-      alert("Houve um problema na realização do cadastro");
+        if(response.ok) {
+            login(userData.senha, userData.email)
+        } else {
+            alert("Não foi possível realizar o cadastro")    
+        }
+    }).catch(() => {
+        alert("Houve um problema na realização do cadastro")
     });
 };
 
