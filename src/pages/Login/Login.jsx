@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
-import { Box, Grid, Typography, Hidden } from "@material-ui/core";
-import useStyles from "./styles";
-import LoginService from "../../services/loginService/LoginService";
+import { login } from "../../services/loginService/LoginService";
+import BgImageLogin from "../../assets/login-background.png";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import BgImageLogin from "../../assets/login-background.png";
@@ -10,19 +10,26 @@ import BgImageLogin from "../../assets/login-background.png";
 const Login = () => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
-
-  const onChangeHandler = (e) => {
-    console.log(e.target.value);
-  };
+  const history = useHistory();
 
   const classes = useStyles();
+
+  const handleLogin = () => {
+    login(password, user).then(() => {
+      history.push("/");
+    });
+  };
 
   return (
     <Grid container className={classes.baseContainerLogin}>
       <Hidden smDown>
         <Grid id="login-bg-image" item md={6}>
           <Box display="flex">
-            <img src={BgImageLogin} className={classes.bgImage} alt="Landscape"/>
+            <img
+              src={BgImageLogin}
+              className={classes.bgImage}
+              alt="Landscape"
+            />
           </Box>
         </Grid>
       </Hidden>
@@ -72,7 +79,12 @@ const Login = () => {
                 alignItems="stretch"
               >
                 <Box display="flex" flexDirection="column" marginY="3px">
-                  <CustomInput color="primary" name="E-mail" type="email" onChange={e => setUser(e.target.value)}/>
+                  <CustomInput
+                    color="primary"
+                    name="E-mail"
+                    type="email"
+                    onChange={(e) => setUser(e.target.value)}
+                  />
                 </Box>
                 <Box display="flex" flexDirection="column" marginY="3px">
                   <CustomInput
@@ -87,7 +99,7 @@ const Login = () => {
                     text="Entrar"
                     iconName="send"
                     color="secondary"
-                    onClick={() => LoginService(password, user)}
+                    onClick={() => handleLogin()}
                   />
                 </Box>
               </Box>
@@ -99,14 +111,14 @@ const Login = () => {
                 flexDirection="column"
                 paddingTop="40px"
               >
-                <a href="/">
+                <Link to="/forgot-password">
                   <Typography component="span"> Esqueci minha senha</Typography>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/register">
                   <Typography color="secondary" component="span">
                     Criar Conta
                   </Typography>
-                </a>
+                </Link>
               </Box>
             </Grid>
           </Grid>

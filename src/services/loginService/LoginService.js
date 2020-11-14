@@ -1,13 +1,12 @@
-const LoginService = async (senha, usuario) => {
-    const REQ_METHOD = {
-        method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            senha: senha,
-            usuario: usuario,
-        })
-    }
-
+export const login = async (senha, usuario) => {
+  const REQ_METHOD = {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify({
+      senha: senha,
+      usuario: usuario,
+    }),
+  };
     await fetch("https://javatravelers-backend.azurewebsites.net/login", REQ_METHOD)
     .then(async (response) => {
         if(response.ok) {
@@ -22,4 +21,9 @@ const LoginService = async (senha, usuario) => {
     });
 }
 
-export default LoginService;
+
+export const logout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("userId");
+  return true;
+};
