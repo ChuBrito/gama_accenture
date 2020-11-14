@@ -19,7 +19,7 @@ const Header = ({ header, infos, share, shareHandler }) => {
       <Typography>{dateText}</Typography>
 
       {share ? (
-        <IconButton size="small" onClick={() => shareHandler} color="secondary">
+        <IconButton size="small" onClick={() => shareHandler()} color="secondary">
           <ShareIcon />
         </IconButton>
       ) : null}
