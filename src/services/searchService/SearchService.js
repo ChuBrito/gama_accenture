@@ -46,4 +46,21 @@ const LocationSearch = async (location) => {
     });
 }
 
-export { SimpleSearch, LocationSearch } ;
+const TicketsSearch = async() => {
+    const token = localStorage.getItem("token");
+
+    const REQ_METHOD = {
+        method: 'GET',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': token},
+    }
+
+    await fetch("https://javatravelers-backend.azurewebsites.net/tickets/list", REQ_METHOD)
+    .then(async (response) => {
+        if(response.ok) {
+            const answer = await response.json();
+            console.log(answer);
+        }
+    })
+}
+
+export { SimpleSearch, LocationSearch, TicketsSearch } ;
