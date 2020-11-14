@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 // import DefaultPage from '../../templates/DefaultPage';
 import {
@@ -356,11 +355,7 @@ const Checkout = () => {
                 </div>
                 <div>
                   <Box display="flex" flexDirection="column" marginY="3px">
-                    <CustomButton
-                      color="primary"
-                      text="Comprar"
-                      color="secondary"
-                    />
+                    <CustomButton color="primary" text="Comprar" />
                   </Box>
                 </div>
               </Content>

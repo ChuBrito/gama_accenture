@@ -195,11 +195,7 @@ function TransitionsModal({ ticket, open: openProps, onClose }) {
                       alignItems="stretch"
                     >
                       <Box display="flex" flexDirection="column" marginY="3px">
-                        <CustomButton
-                          color="primary"
-                          text="Comprar"
-                          color="secondary"
-                        />
+                        <CustomButton color="primary" text="Comprar" />
                       </Box>
                     </Box>
                   </Grid>

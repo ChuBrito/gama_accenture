@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, Grid, Typography } from "@material-ui/core";
+import { Box, Grid, Typography } from "@material-ui/core";
 import ProfileBio from "../../organisms/ProfileBio/ProfileBio";
 import DefaultPage from "../../templates/DefaultPage/DefaultPage";
 import TicketListAccord from "../../organisms/TicketsListAccord/TicketListAccord";
@@ -15,10 +15,6 @@ const Profile = () => {
   const [reservedTickets, setReservedTickets] = useState([]);
   const [openedTicket, setOpenedTicket] = useState();
   const [modalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    getUserTicketsLists();
-  }, []);
 
   const saveProfileHandler = (e) => {
     console.log(e);
@@ -63,6 +59,10 @@ const Profile = () => {
   function closeModal() {
     setModalOpen(false);
   }
+
+  useEffect(() => {
+    getUserTicketsLists();
+  }, []);
 
   return (
     <DefaultPage>
