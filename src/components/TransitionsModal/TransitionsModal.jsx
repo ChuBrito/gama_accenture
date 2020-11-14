@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-// import { makeStyles } from '@material-ui/core/styles';
 import {
   Modal,
   Grid,
@@ -7,26 +6,30 @@ import {
   Typography,
   Divider,
   Box,
+  Toolbar,
+  AppBar,
+  Backdrop,
+  Fade,
+  IconButton,
 } from "@material-ui/core";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-
 import CloseIcon from "@material-ui/icons/Close";
 import CardTravelIcon from "@material-ui/icons/CardTravel";
-import IconButton from "@material-ui/core/IconButton";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 
 import CustomButton from "../CustomButton/CustomButton";
-import { ModalBorder } from "./styles";
+import ModalFlyInfo from "./component/ModalFlyInfo";
+import { ModalBorder } from "./component/styles";
 import useStyles from "./ComponentStyleModal/styles";
+import { TICKET_MOCK_1 } from "../../shared/utils/MOCKS";
 
-function TransitionsModal({ ticket, open: openProps, onClose }) {
-  console.log(ticket);
+const TransitionsModal = ({
+  ticket = TICKET_MOCK_1,
+  open: openProps,
+  onClose,
+}) => {
   const classes = useStyles();
   const open = useMemo(() => openProps && !!ticket, [openProps, ticket]);
-
+  console.log(ticket);
   return (
     <Modal
       xs={12}
@@ -45,7 +48,7 @@ function TransitionsModal({ ticket, open: openProps, onClose }) {
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.modalHeader}>
             <Typography variant="h4" className={classes.fontVoo}>
-              GOL
+              {ticket?.flyInfos[0].airline}
             </Typography>
 
             <IconButton
@@ -62,102 +65,34 @@ function TransitionsModal({ ticket, open: openProps, onClose }) {
             <Grid>
               <Toolbar>
                 <Typography variant="h6" className={classes.title}>
-                  Voo GOL3340 - Airbus A320 - 100/200
+                  {`${ticket?.initialDestination} - ${ticket?.finalDestination}`}
                 </Typography>
               </Toolbar>
-              <ModalBorder>
-                <Grid className={classes.modalContent} container>
-                  <Grid
-                    item
-                    xs={12}
-                    sm={3}
-                    className={classes.modalContentItem}
-                  >
-                    <div>
-                      <Typography variant="h5" color="textPrimary">
-                        Ter 03 Nov
-                      </Typography>
-                      <Typography
-                        variant="h4"
-                        color="textPrimary"
-                        className={classes.fontHour}
-                      >
-                        19:25
-                      </Typography>
-                    </div>
-                    <div>
-                      <Typography
-                        variant="h3"
-                        color="textPrimary"
-                        className={classes.fontVoo}
-                      >
-                        CGH
-                      </Typography>
-                      <Typography>
-                        Aeroporto Internacional de Guarulhos
-                      </Typography>
-                    </div>
-                  </Grid>
-
-                  <Divider />
-
-                  <Grid className={classes.modalContentItem}>
-                    <div>
-                      <Typography
-                        variant="h5"
-                        color="textPrimary"
-                        className={classes.fontVoo}
-                      >
-                        Duração
-                      </Typography>
-                      <Typography
-                        color="textPrimary"
-                        className={classes.fontHour}
-                      >
-                        1h 10m
-                      </Typography>
-                      <Typography>Econômica</Typography>
-                    </div>
-                  </Grid>
-
-                  <Divider />
-
-                  <Grid
-                    className={classes.modalContentItem}
-                    item
-                    xs={12}
-                    sm={3}
-                  >
-                    <div>
-                      <Typography variant="h5" color="textPrimary">
-                        Ter 03 Nov
-                      </Typography>
-                      <Typography
-                        variant="h4"
-                        color="textPrimary"
-                        className={classes.fontHour}
-                      >
-                        19:25
-                      </Typography>
-                    </div>
-                    <div>
-                      <Typography
-                        variant="h3"
-                        color="textPrimary"
-                        className={classes.fontVoo}
-                      >
-                        CGH
-                      </Typography>
-                      <Typography>
-                        Aeroporto Internacional de Guarulhos
-                      </Typography>
-                    </div>
-                  </Grid>
-                </Grid>
-              </ModalBorder>
-              <br /> {/*Corrigir o espaçamento*/}
+              <ModalFlyInfo
+                flyInfoItens={{
+                  initialDate: ticket.flyInfos[0].dates.initialDate,
+                  initialTime: ticket.flyInfos[0].dates.initialTime,
+                  initialIataCode: ticket.initialIataCode,
+                  flyDuration: ticket.flyInfos[0].flyDuration,
+                  arriveDate: ticket.flyInfos[0].dates.arriveDate,
+                  arriveTime: ticket.flyInfos[0].dates.arriveTime,
+                  finalIataCode: ticket.finalIataCode,
+                }}
+              />
+              {!ticket.oneWay ? (
+                <ModalFlyInfo
+                  flyInfoItens={{
+                    initialDate: ticket.flyInfos[1].dates.initialDate,
+                    initialTime: ticket.flyInfos[1].dates.initialTime,
+                    initialIataCode: ticket.finalIataCode,
+                    flyDuration: ticket.flyInfos[1].flyDuration,
+                    arriveDate: ticket.flyInfos[1].dates.arriveDate,
+                    arriveTime: ticket.flyInfos[1].dates.arriveTime,
+                    finalIataCode: ticket.initialIataCode,
+                  }}
+                />
+              ) : null}
               <Hidden xsDown>
-                {/*colocar xsDown*/}
                 <ModalBorder className={classes.modalContent}>
                   <Typography>Bagagem</Typography>
                   <Divider />
@@ -216,7 +151,7 @@ function TransitionsModal({ ticket, open: openProps, onClose }) {
                       >
                         <Typography>R$</Typography>
                         <Typography className={classes.ModalPrice}>
-                          400,00
+                          {ticket.value}
                         </Typography>
                       </Box>
                     </Box>
@@ -247,5 +182,5 @@ function TransitionsModal({ ticket, open: openProps, onClose }) {
       </Fade>
     </Modal>
   );
-}
+};
 export default TransitionsModal;

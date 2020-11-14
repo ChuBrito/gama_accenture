@@ -9,7 +9,6 @@ const useStyles = makeStyles({
   },
 });
 const FlyInfos = ({ information }) => {
-  console.log(information);
   const classes = useStyles();
   return (
     <Grid

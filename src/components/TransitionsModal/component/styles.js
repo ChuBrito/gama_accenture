@@ -1,4 +1,16 @@
 import { makeStyles } from "@material-ui/core/styles";
+import styled from "styled-components";
+
+export const ModalBorder = styled.div `
+  border: 1px solid #000000;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 const useStyles = makeStyles((theme) => ({
     modalContainer: {},
@@ -20,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
         position: "relative",
         color: "#222",
         backgroundColor: "#fff",
+
         padding: "8px",
         outline: "1px solid #fff",
         borderRadius: "0px",
