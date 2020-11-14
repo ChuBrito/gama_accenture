@@ -4,7 +4,6 @@ import ShareIcon from "@material-ui/icons/Share";
 import { HeaderContainer } from "./styles";
 
 const Header = ({ header, infos, share, shareHandler }) => {
-  console.log(share);
   const dateText = header.oneWay
     ? `${infos[0].dates.initialDate} até ${infos[0].dates.arriveDate}`
     : `${infos[0].dates.initialDate} até ${infos[1].dates.arriveDate}`;

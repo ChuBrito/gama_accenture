@@ -11,7 +11,6 @@ const Content = ({
   data,
   ticketDetailsHandler,
 }) => {
-  console.log(content.flyInfos);
   const classes = useStyles();
 
   return (
