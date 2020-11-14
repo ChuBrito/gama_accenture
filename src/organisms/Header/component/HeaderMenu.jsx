@@ -41,7 +41,7 @@ const HeaderMenu = () => {
           <Link to="/profile">
             <MenuItem>Profile</MenuItem>
           </Link>
-          <Link to="/search">
+          <Link to="/">
             <MenuItem>Search</MenuItem>
           </Link>
           <MenuItem onClick={() => handleLogout()}>Logout</MenuItem>
