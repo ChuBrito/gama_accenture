@@ -29,6 +29,14 @@ const theme = createMuiTheme({
                 height: "57px",
             },
         },
+        MuiContainer: {
+            maxWidthLg: "1360px",
+        },
+        MuiAppBar: {
+            colorPrimary: {
+                backgroundColor: "#F1F1F1",
+            },
+        },
     },
     palette: {
         primary: {
@@ -40,8 +48,9 @@ const theme = createMuiTheme({
         },
         text: {
             primary: "#123952",
-            secondary: "#617480",
+            secondary: "#FFFFFF",
             hint: "#A0ACB2",
+            featured: "#009688",
         },
     },
     typography: {
@@ -74,7 +83,14 @@ const theme = createMuiTheme({
             fontFamily: "Heebo",
             fontSize: "0.8rem",
         },
-
+        subtitle1: {
+            fontFamily: "Heebo",
+            fontSize: "0.8rem",
+        },
+        subtitle2: {
+            fontFamily: "Heebo",
+            fontSize: "2.4em",
+        },
     },
 });
 

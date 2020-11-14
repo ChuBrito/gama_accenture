@@ -13,6 +13,7 @@ const CustomInput = ({
   onChange,
   onClick,
   iconData,
+  defaultValue,
   noPlaceholder,
 }) => {
   return (
@@ -20,8 +21,9 @@ const CustomInput = ({
       <OutlinedInput
         color={color}
         id={name.toLowerCase()}
-        type={type ? type : "text"}
+        type={type || "text"}
         onChange={onChange}
+        value={defaultValue ? defaultValue : null}
         startAdornment={
           <InputAdornment position="start">
             <IconButton
