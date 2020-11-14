@@ -1,17 +1,17 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Container = styled.div `
-  background: #F5F8FA ;
+export const Container = styled.div`
+  background: #f5f8fa;
   height: 100vh;
 `;
-export const Content = styled.div `
+export const Content = styled.div`
   height: 100vh;
-   display: flex;
-   margin: 10px;
-   justify-content: center;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
 `;
 
-export const Form = styled.form `
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +25,7 @@ export const Form = styled.form `
     margin-bottom: 10px;
 
     color: #888888;
-    font-family: 'Heebo', sans-serif;
+    font-family: "Heebo", sans-serif;
   }
 
   .textFieldInput {
@@ -34,7 +34,7 @@ export const Form = styled.form `
   }
 
   .ButtonEnviar {
-    background: #F25D27;
+    background: #f25d27;
     color: #fff;
     height: 55px;
     border: 0px solid;

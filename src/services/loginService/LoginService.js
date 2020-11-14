@@ -7,20 +7,23 @@ export const login = async (senha, usuario) => {
       usuario: usuario,
     }),
   };
-    await fetch("https://javatravelers-backend.azurewebsites.net/login", REQ_METHOD)
+  await fetch(
+    "https://javatravelers-backend.azurewebsites.net/login",
+    REQ_METHOD
+  )
     .then(async (response) => {
-        if(response.ok) {
-            const answer = await response.json();
-            localStorage.setItem("token", answer.token);
-            localStorage.setItem("userId", answer.userId);
-        } else {
-            alert("Login inválido");
-        }
-    }).catch(() => {
-        alert("Houve um problema na realização do login")
+      if (response.ok) {
+        const answer = await response.json();
+        localStorage.setItem("token", answer.token);
+        localStorage.setItem("userId", answer.userId);
+      } else {
+        alert("Login inválido");
+      }
+    })
+    .catch(() => {
+      alert("Houve um problema na realização do login");
     });
-}
-
+};
 
 export const logout = () => {
   localStorage.removeItem("token");

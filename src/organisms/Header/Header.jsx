@@ -4,12 +4,8 @@ import {
   AppBar,
   Toolbar,
   useTheme,
-  Typography,
-  Button,
   Box,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import HeaderMenu from "./component/HeaderMenu";
 import Logo from "../../components/Logo/Logo";
 import useStyles from "./styles";

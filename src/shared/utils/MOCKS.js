@@ -70,8 +70,8 @@ export const TICKET_MOCK_2 = {
 export const MOCK_TICKET_LIST = [TICKET_MOCK_1, TICKET_MOCK_2, TICKET_MOCK_1];
 
 export const MOCK_USER_DATA = {
-    name: "Fedrerico Novo",
-    email: "fe.novo@fed.com",
-    document: "377.670.555-08",
-    phone: "11 986111616",
+  name: "Fedrerico Novo",
+  email: "fe.novo@fed.com",
+  document: "377.670.555-08",
+  phone: "11 986111616",
 };

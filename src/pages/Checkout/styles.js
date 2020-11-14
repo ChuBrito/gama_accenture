@@ -2,22 +2,22 @@ import { makeStyles } from "@material-ui/core/styles";
 import styled from "styled-components";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        width: "100%",
-    },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        fontWeight: theme.typography.fontWeightRegular,
-    },
+  root: {
+    width: "100%",
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
+  },
 }));
 
-export const Container = styled.div `
+export const Container = styled.div`
   height: 180vh;
   background-color: #f5f8fa;
   padding: 20px;
 `;
 
-export const ModalBorder = styled.div `
+export const ModalBorder = styled.div`
   border: 1px solid #000000;
   border-radius: 30px;
   width: 100%;
@@ -29,7 +29,7 @@ export const ModalBorder = styled.div `
   background-color: #fff;
 `;
 
-export const Content = styled.div `
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -67,7 +67,7 @@ export const Content = styled.div `
   }
 `;
 
-export const ContainerForm = styled.div `
+export const ContainerForm = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -108,7 +108,7 @@ export const ContainerForm = styled.div `
   }
 `;
 
-export const ContentInput = styled.div `
+export const ContentInput = styled.div`
   display: flex;
   align-items: center;
 
