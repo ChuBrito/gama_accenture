@@ -5,7 +5,10 @@ import { login } from "../../services/loginService/LoginService";
 import BgImageLogin from "../../assets/login-background.png";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import BgImageLogin from "../../assets/login-background.png";
+// import BgImageLogin from "../../assets/login-background.png";
+
+import { Box, Grid, Hidden, Typography } from "@material-ui/core";
+import useStyles from "./styles";
 
 const Login = () => {
   const [password, setPassword] = useState("");
