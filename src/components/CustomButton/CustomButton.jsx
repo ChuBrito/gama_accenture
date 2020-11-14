@@ -3,10 +3,10 @@ import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 import Typography from "@material-ui/core/Typography";
 
-const CustomButton = ({ text, iconName, color, onClick, size, variant}) => {
+const CustomButton = ({ text, iconName, color, onClick, size, variant }) => {
   return (
     <Button
-      variant='contained'
+      variant="contained"
       color={color || "default"}
       size={size}
       onClick={onClick}

@@ -4,6 +4,7 @@ export const TICKET_MOCK_1 = {
     finalDestination: "Madrid",
     finalIataCode: "MAD",
     oneWay: true,
+    favorited: false,
     value: 455.45,
     flyInfos: [{
             //infos da ida
@@ -38,6 +39,7 @@ export const TICKET_MOCK_2 = {
     finalIataCode: "BER",
     oneWay: false,
     value: 385.45,
+    favorited: false,
     flyInfos: [{
             //infos da ida
             airline: "Air France", // ele envia o codigo ai tem que traduzir pelo campo dictionaries no final da response
@@ -68,8 +70,8 @@ export const TICKET_MOCK_2 = {
 export const MOCK_TICKET_LIST = [TICKET_MOCK_1, TICKET_MOCK_2, TICKET_MOCK_1];
 
 export const MOCK_USER_DATA = {
-    name: "Fedrerico Novo",
-    email: "fe.novo@fed.com",
-    document: "377.670.555-08",
-    phone: "11 986111616",
+  name: "Fedrerico Novo",
+  email: "fe.novo@fed.com",
+  document: "377.670.555-08",
+  phone: "11 986111616",
 };
