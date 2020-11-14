@@ -118,12 +118,11 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
 
 ### Mateus
 
-    Adicionada tela de login, com inputs e botão custom. Criado arquivo 'Login.css
-    User login added, consuming API.
-    Implementado teste de requisição em 'LoginService' e 'Login.jsx'
+    Login page added, with custom buttons and inputs. Criado arquivo 'Login.css
+    Login service added.
     Grid in login page. Custom input fix. Dependency fix.
     Search service implemented. Fix on SearchService nomenclature.
     Location search implemented. Fixed import in Search component.
-    Merge conflict resolved
-    Register service implemented. Catch added in login service.
+    Register service implemented. Error handling added in login service.
     Service to list tickets implemented.
+    Fixed search button, in header.
