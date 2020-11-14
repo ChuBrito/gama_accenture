@@ -6,7 +6,7 @@ import { ReactComponent as LogoLine } from "../../assets/Logo_line.svg";
 
 const Logo = ({ large, line, height, width, padding }) => {
   return (
-    <Box display="flex" maxHeight={height} maxWidth={width} padding={padding}>
+    <Box display="flex" height={height} maxWidth={width} padding={padding}>
       {line ? <LogoLine /> : large ? <LogoLarge /> : <LogoSmall />}
     </Box>
   );

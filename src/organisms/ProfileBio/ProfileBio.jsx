@@ -68,6 +68,7 @@ const ProfileBio = ({
             <FormLabel className={classes.labelsColor}>CPF</FormLabel>
             <CustomInput
               name="profile-name-input"
+              color="secondary"
               defaultValue={documentUser}
               noPlaceholder
             />
@@ -84,6 +85,7 @@ const ProfileBio = ({
             <CustomInput
               name="profile-phone-input"
               defaultValue={phoneUser}
+              color="secondary"
               noPlaceholder
             />
           </Grid>

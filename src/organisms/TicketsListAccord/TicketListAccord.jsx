@@ -12,8 +12,6 @@ import useStyles from "./styles";
 import PlaceholderTicket from "./PlaceholderTicket/PlaceholderTicket";
 
 const TicketList = ({ list, name }) => {
-  console.log(list);
-  console.log(name);
   const classes = useStyles();
   return (
     <Accordion>

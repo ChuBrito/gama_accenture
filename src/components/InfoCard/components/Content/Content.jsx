@@ -4,7 +4,13 @@ import CustomButton from "../../../CustomButton/CustomButton";
 import useStyles from "./styles";
 import ContentDetails from "./components/ContentDetails";
 
-const Content = ({ content }) => {
+const Content = ({
+  content,
+  reserv,
+  bookmarked,
+  data,
+  ticketDetailsHandler,
+}) => {
   console.log(content.flyInfos);
   const classes = useStyles();
 
@@ -60,12 +66,23 @@ const Content = ({ content }) => {
           md={12}
         >
           <Box dispplay="flex" margin="0 auto">
-            <CustomButton
-              size="large"
-              width="400px"
-              color="secondary"
-              text="COMPRAR"
-            />
+            {bookmarked ? (
+              <CustomButton
+                size="large"
+                width="400px"
+                color="secondary"
+                text="COMPRAR"
+                onClick={() => ticketDetailsHandler(data)}
+              />
+            ) : (
+              <CustomButton
+                size="large"
+                width="400px"
+                color="secondary"
+                text="DETALHES"
+                onClick={() => ticketDetailsHandler(data)}
+              />
+            )}
           </Box>
         </Grid>
       </Grid>

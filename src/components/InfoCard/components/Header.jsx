@@ -1,8 +1,10 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { IconButton, Typography } from "@material-ui/core";
+import ShareIcon from "@material-ui/icons/Share";
 import { HeaderContainer } from "./styles";
 
-const Header = ({ header, infos }) => {
+const Header = ({ header, infos, share, shareHandler }) => {
+  console.log(share);
   const dateText = header.oneWay
     ? `${infos[0].dates.initialDate} até ${infos[0].dates.arriveDate}`
     : `${infos[0].dates.initialDate} até ${infos[1].dates.arriveDate}`;
@@ -16,6 +18,12 @@ const Header = ({ header, infos }) => {
         {`${header.initialDestination} - ${header.finalDestination}`}
       </Typography>
       <Typography>{dateText}</Typography>
+
+      {share ? (
+        <IconButton size="small" onClick={() => shareHandler} color="secondary">
+          <ShareIcon />
+        </IconButton>
+      ) : null}
     </HeaderContainer>
   );
 };
