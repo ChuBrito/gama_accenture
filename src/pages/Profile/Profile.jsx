@@ -6,10 +6,11 @@ import TicketListAccord from "../../organisms/TicketsListAccord/TicketListAccord
 import InfoCard from "../../components/InfoCard/InfoCard";
 import TransitionsModal from "../../components/TransitionsModal/TransitionsModal";
 import { MOCK_TICKET_LIST, MOCK_USER_DATA } from "../../shared/utils/MOCKS.js";
+import { useCallback } from "react";
 
 //TODO: colocar indenticon
 const Profile = () => {
-  const [userData, setUserData] = useState(MOCK_USER_DATA);
+  const [userData] = useState(MOCK_USER_DATA);
   const [bookmarkedTickets, setBookmarkedTickets] = useState([]);
   const [ticketsList, setTicketsList] = useState([]);
   const [reservedTickets, setReservedTickets] = useState([]);
@@ -20,7 +21,7 @@ const Profile = () => {
     console.log(e);
   };
 
-  const getUserTicketsLists = () => {
+  const getUserTicketsLists = useCallback (() => {
     //TODO: CREATE SERVICE TO GET LISTS
     const favList = MOCK_TICKET_LIST.map((favItem, index) => (
       <InfoCard
@@ -49,7 +50,7 @@ const Profile = () => {
     setBookmarkedTickets([...favList]);
     setTicketsList([...ticketsBuyList]);
     setReservedTickets([...reservedList]);
-  };
+  }, []);
 
   function openModal(data) {
     setOpenedTicket(data);
@@ -62,7 +63,7 @@ const Profile = () => {
 
   useEffect(() => {
     getUserTicketsLists();
-  }, []);
+  }, [getUserTicketsLists]);
 
   return (
     <DefaultPage>
