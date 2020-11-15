@@ -62,7 +62,7 @@ const Profile = () => {
 
   useEffect(() => {
     getUserTicketsLists();
-  }, []);
+  }, [getUserTicketsLists]);
 
   return (
     <DefaultPage>
