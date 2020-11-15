@@ -59,20 +59,20 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
 
 ### Diego
 
-    Estrutura das pastas e criacao da base dos componentes
+    Folder structure and components blueprint
     Card component
-    CustomButton e CustomInput
-    Card não finalizado
-    Card atualizado
+    CustomButton and CustomInput
+    Card (not final)
+    Card (updated)
     Styles of card
-    Resolve app
-    Card quase finalizado, falta arrumar CSS
-    Card finalizado, falta corrigir CSS
-    Receber data no card
-    Correcao do padrao dos codigos com prettier
-    Rotas no header
-    Header comp
-    filtrar por preço
+    Fix in App.jsx
+    Card nearly finished, still needs CSS
+    Card finished, still needs CSS
+    Get dates on card
+    Fix on code pattern, using prettier
+    Routing added in header
+    Header component
+    Price filtering
 
 ### Felipe
 
