@@ -4,15 +4,7 @@ Projeto para o fim do treinamento da Gama que será apresentado para accenture.
 
 ## Escopo do Projeto
 
-A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas, integrado com meio de pagamento de sua escolha.
-
-## Informações da organização do projeto
-
-- Sprint de 1 semana.
-
-- Deploy no Azure Devops.
-
-- Semanalmente Apresentar compartilhar o git do projeto com cada commit feito e por quem.
+A equipe desenvolveu um sistema de compra e reserva de passagens aéreas.
 
 ## Funcionalidades
 
@@ -55,6 +47,15 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
   - Nos baseamos na estrutura Atomic para criação de componentes. Utilizamos o Material Ui para definir o padrão de estilos e quando precisavamos utilizamos o Styled-Components para fazer alguns ajustes.
   - No útimo dia do curso faremos uma apresentação para Banca da Accenture.
 
+## Ferramentas Utilizadas
+  Trello - Organização das Tarefas
+  Figma - Criação do Design
+  Discord - comunicação Geral
+  Notion - para atas da reunião
+  
+## Design
+  Luiz fez o design no Figma com auxílio dos outros membros do grupo.
+
 ## Commits feitos
 
 ### Diego
@@ -76,10 +77,10 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
 
 ### Felipe
 
-    Criação do projeto React
-    Commit inicial
-    Criação do tema
-    Organização das pastas
+    React Project Creation
+    Initial Commit 
+    Theme Creation
+    Folder Organization
     Searchbar component in progress
     Styled search component and folder organization
     Header logged off
@@ -88,9 +89,9 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
     Logo update to login
     Profile e bioprofile fixes
     Changes on images
-    Adaptação do login, logo e deafaultpage
-    Fix no header e search, componentizçao login
-    Profilebio e searchlist update
+    Login adaptation, logo e deafaultpage
+    Header fix a search, componentization login
+    Profilebio and searchlist update
     Search mounting pages
     Search mock list
     Style fixes search list
@@ -98,7 +99,8 @@ A equipe deverá desenvolver um sistema de compra e reserva de passagens aéreas
     Minor main impor fixes
     Modal for tickets aplied
     Search modal aplied
-
+    Modal 2 ways demonstration
+    
 ### Luiz
 
     Adding the Register components and folder organization
