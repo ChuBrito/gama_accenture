@@ -7,6 +7,7 @@ import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import useStyles from "./RegisterComponentStyle/styles";
 import { ImageLogo, Title, LinkVoltar } from "./styles";
+import { Link } from "react-router-dom";
 
 export const Register = () => {
   const classes = useStyles();
@@ -104,10 +105,10 @@ export const Register = () => {
               </Box>
             </Box>
             <LinkVoltar>
-              <a href="forgot">
+              <Link to="/">
                 Volta para login
                 <ArrowRightAlt />
-              </a>
+              </Link>
             </LinkVoltar>
           </Grid>
         </div>
