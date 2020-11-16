@@ -4,7 +4,7 @@ import theme from "../../core/theme/theme";
 import SearchBarFields from "./components/SearchBarFields";
 
 const SearchBar = ({ searchHandler }) => {
-  const [searchObj, setSearchObj] = useState({});
+  const [searchObj] = useState({});
 
   const onChangeOneWay = (e) => {
     //altera os o tipo de viagem do search obj
